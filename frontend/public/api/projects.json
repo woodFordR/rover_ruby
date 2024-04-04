@@ -5,7 +5,25 @@
       "type": "projects",
       "attributes": {
         "title": "rr-blog",
-        "description": "A blogging site.",
+        "description": "A blogging application built with ruby on rails and reactjs.",
+        "owner": "woodFordR"
+      }
+    },
+    {
+      "id": "2",
+      "type": "projects",
+      "attributes": {
+        "title": "emberman",
+        "description": "A static ruby site built with middleman and emberjs.",
+        "owner": "woodFordR"
+      }
+    },
+    {
+      "id": "3",
+      "type": "projects",
+      "attributes": {
+        "title": "superRentals",
+        "description": "An emberjs application.",
         "owner": "woodFordR"
       }
     }
