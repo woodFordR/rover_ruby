@@ -10,3 +10,15 @@
     <Hds::Badge @text="working" @icon="rocket" @color="neutral-dark-mode" @iconPosition="trailing" />
   </PH.Badges>
 </Hds::PageHeader>
+
+  <Hds::Accordion as |A|>
+    {{#each @model as |project|}}
+      <A.Item>
+        <:toggle>{{project.title}} -- <Hds::IconTile @logo="terraform" @size="large" /></:toggle>
+        <:content>
+          <p>{{project.description}}</p>
+          <p>repo owner: {{project.owner}}</p>
+        </:content>
+      </A.Item>
+    {{/each}}
+  </Hds::Accordion>
