@@ -13,7 +13,9 @@ module.exports = function (defaults) {
       ],
     },
   });
-  app.import('node_modules/@hashicorp/design-system-components/dist/styles/@hashicorp/design-system-components.css');
+  app.import(
+    'node_modules/@hashicorp/design-system-components/dist/styles/@hashicorp/design-system-components.css',
+  );
 
   return app.toTree();
 };

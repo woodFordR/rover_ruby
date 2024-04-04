@@ -19,12 +19,11 @@
           <div class="card">
             <Hds::IconTile @logo={{project.logo}} @size="large" />
             <span>{{project.title}}</span>
-            <p>{{project.description}}</p>
+            <p>{{project.owner}}</p>
           </div>
         </:toggle>
         <:content>
-          <p>{{project.description}}</p>
-          <p>repo owner: {{project.owner}}</p>
+          <h2>{{project.description}}</h2>
         </:content>
       </A.Item>
       <Hds::Separator />

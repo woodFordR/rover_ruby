@@ -4,7 +4,7 @@ class Api::V1::ProjectsController < ApplicationController
   def index
     @projects = Project.order(created_at: :desc)
 
-    render json: @projects
+    render json: serialize(@projects)
   end
 
   def show
@@ -16,7 +16,7 @@ class Api::V1::ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      render json: @project status: :created, api_v1_project_url: @project
+      render json: @project, status: :created, api_v1_project_url: @project
     else
       render json: @project.errors, status: :unprocessable_entity
     end
@@ -43,6 +43,6 @@ class Api::V1::ProjectsController < ApplicationController
 
     # allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:description, :owner)
+      params.require(:project).permit(:description, :owner, :title, :logo)
     end
 end
