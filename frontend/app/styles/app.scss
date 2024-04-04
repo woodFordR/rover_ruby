@@ -3,6 +3,7 @@
 
 body {
   // background-color: var(--token-color-nomad-gradient-primary-start);
+  padding-top: 1em;
   background: linear-gradient(
     -45deg,
     var(--token-color-waypoint-gradient-primary-stop),
@@ -14,7 +15,7 @@ body {
 }
 
 aside {
-  padding-right: 5em;
+  padding: 2em 5em;
 }
 
 a {
@@ -22,16 +23,28 @@ a {
   color: var(--token-color-packer-foreground);
 }
 
-h1 {
-  padding-left: 2.5em;
+.biggest-h {
+  padding-left: 1em;
+}
+
+.card {
+  display: flex;
+  span {
+    padding: 1em 0 0 1em;
+  }
+  p {
+    padding: 0.5em 1.5em 0 1.5em;
+    font-size: small;
+    float: inline-end;
+  }
 }
 
 .hds-accordion-item {
   // background-color: var(--token-color-nomad-gradient-primary-start);
   background: linear-gradient(
     -45deg,
-    var(--token-color-terraform-gradient-faint-start),
-    var(--token-color-terraform-gradient-primary-start));
+    var(--token-color-packer-gradient-primary-stop),
+    var(--token-color-packer-gradient-primary-start));
   background-size: 400%;
   animation: gradient 15s ease infinite;
 }

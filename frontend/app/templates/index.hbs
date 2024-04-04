@@ -1,5 +1,5 @@
 <Hds::PageHeader as |PH|>
-  <PH.Title>adam's collection of things</PH.Title>
+  <div class="biggest-h"><PH.Title>adam's collection of things</PH.Title></div>
   <PH.Breadcrumb>
     <Hds::Breadcrumb>
       <Hds::Breadcrumb::Item @text="project" @icon="layers" />
@@ -15,7 +15,13 @@
   <Hds::Accordion as |A|>
     {{#each @model as |project|}}
       <A.Item>
-        <:toggle>{{project.title}} -- <Hds::IconTile @logo={{project.logo}} @size="large" /></:toggle>
+        <:toggle>
+          <div class="card">
+            <Hds::IconTile @logo={{project.logo}} @size="large" />
+            <span>{{project.title}}</span>
+            <p>{{project.description}}</p>
+          </div>
+        </:toggle>
         <:content>
           <p>{{project.description}}</p>
           <p>repo owner: {{project.owner}}</p>
