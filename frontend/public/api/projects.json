@@ -6,6 +6,7 @@
       "attributes": {
         "title": "rr-blog",
         "description": "A blogging application built with ruby on rails and reactjs.",
+        "logo": "nomad",
         "owner": "woodFordR"
       }
     },
@@ -15,6 +16,7 @@
       "attributes": {
         "title": "emberman",
         "description": "A static ruby site built with middleman and emberjs.",
+        "logo": "terraform",
         "owner": "woodFordR"
       }
     },
@@ -24,6 +26,7 @@
       "attributes": {
         "title": "superRentals",
         "description": "An emberjs application.",
+        "logo": "vault",
         "owner": "woodFordR"
       }
     }
