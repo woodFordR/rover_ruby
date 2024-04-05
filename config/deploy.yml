@@ -22,9 +22,6 @@ ssh:
 
 # Configure builder setup.
 builder:
-  local:
-    arch: arm64
-    host: unix:///Users/adam/.docker/run/docker-cli-api.sock
   remote:
     arch: amd64
     host: ssh://woodford@192.168.4.63
