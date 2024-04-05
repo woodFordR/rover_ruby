@@ -34,3 +34,7 @@
 # compiled output
 /dist/
 /declarations/
+
+/bruno
+
+/config/credentials/production.key
