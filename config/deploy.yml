@@ -10,8 +10,6 @@ registry:
     - KAMAL_REGISTRY_PASSWORD
 
 env:
-  clear:
-    DB_HOST: 192.168.4.63
   secret:
     - RAILS_MASTER_KEY
 
@@ -28,20 +26,20 @@ ssh:
 
 
 # Use accessory services (secrets come from .env).
-accessories:
-  db:
-    image: postgres:latest
-    host: 192.168.4.63
-    port: 5432
-    user: woodford
-    password: 
-      - PSQL_ROOT_PASSWORD
-  redis:
-    image: redis:7.0
-    host: 192.168.4.63
-    port: 6379
-    directories:
-      - data:/data
+# accessories:
+#   db:
+#     image: postgres:latest
+#     host: 192.168.4.63
+#     port: 5432
+#     user: woodford
+#     password: 
+#       - PSQL_ROOT_PASSWORD
+#   redis:
+#     image: redis:7.0
+#     host: 192.168.4.63
+#     port: 6379
+#     directories:
+#       - data:/data
 
 # Configure custom arguments for Traefik
 # traefik:
