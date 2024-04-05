@@ -2,7 +2,7 @@ service: ruby_rover
 
 image: a2k11/ruby_rover
 servers:
-  - 192.168.4.63
+  - 100.91.117.77
 
 registry:
   username: a2k11
@@ -10,8 +10,9 @@ registry:
     - KAMAL_REGISTRY_PASSWORD
 
 env:
-  secret:
-    - RAILS_MASTER_KEY
+  production:
+    secret:
+      - RAILS_MASTER_KEY
 
 ssh:
   user: woodford
@@ -29,7 +30,7 @@ ssh:
 accessories:
   db:
     image: postgres:14.11
-    host: 192.168.4.63
+    host: 100.91.117.77
     port: 5432
 #   redis:
 #     image: redis:7.0
