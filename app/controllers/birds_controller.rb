@@ -1,5 +1,5 @@
 class BirdsController < ApplicationController
   def show
-    'word'
+    return 'pong', status: :success
   end
 end
