@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       resources :projects
     end
   end
+
+  get "bird", to: "bird#show"
 end
