@@ -2,7 +2,7 @@ service: ruby_rover
 
 image: a2k11/ruby_rover
 servers:
-  - SERVER_DEPLOY
+  - 100.91.117.77
 
 registry:
   username: a2k11
