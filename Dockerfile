@@ -58,7 +58,6 @@ ARG RAILS_MASTER_KEY
 ENV RAILS_ENV=production \
     RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
 
-
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 # Entrypoint prepares the database.
