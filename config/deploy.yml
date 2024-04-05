@@ -21,10 +21,10 @@ ssh:
     - SSH_PASSWORD
 
 # Configure builder setup.
-builder:
-  remote:
-    arch: amd64
-    host: ssh://woodford@192.168.4.63
+# builder:
+#   remote:
+#     arch: amd64
+#     host: ssh://woodford@192.168.4.63
 
 
 # Use accessory services (secrets come from .env).
