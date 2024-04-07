@@ -28,15 +28,15 @@ ssh:
 # Use accessory services (secrets come from .env).
 accessories:
   db:
-    image: postgres:14.11
+    image: postgres:16
     host: 192.168.4.63
     port: 5432
-#   redis:
-#     image: redis:7.0
-#     host: 192.168.4.63
-#     port: 6379
-#     directories:
-#       - data:/data
+  redis:
+    image: redis:7.0
+    host: 192.168.4.63
+    port: 6379
+    directories:
+      - data:/data
 
 # Configure custom arguments for Traefik
 # traefik:
