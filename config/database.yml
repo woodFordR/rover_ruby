@@ -14,3 +14,5 @@ test:
 production:
   <<: *default
   database: ruby_rover_production
+  username: ruby_rover
+  password: <%= ENV["RUBY_ROVER_DATABASE_PASSWORD"] %>
