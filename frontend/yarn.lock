@@ -5278,7 +5278,7 @@ ember-cli-version-checker@^5.1.1, ember-cli-version-checker@^5.1.2:
 
 ember-cli@^5.7.0:
   version "5.7.0"
-  resolved "https://registry.npmjs.org/ember-cli/-/ember-cli-5.7.0.tgz"
+  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-5.7.0.tgz#6cade841776dc0865c57c607b8bd67df4738dbe7"
   integrity sha512-MKHVcRpDk1ENUCCRGGqZ8yfkCsszvSUbwO09h14vqcfaqcJkOWI+p0oynmdZQMM8OkZp484oLe3+CZCsXO9LfA==
   dependencies:
     "@pnpm/find-workspace-dir" "^6.0.2"
