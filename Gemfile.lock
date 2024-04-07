@@ -89,6 +89,7 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    dotenv (3.1.0)
     drb (2.2.1)
     ember-cli-rails (0.12.2)
       ember-cli-rails-assets (>= 0.6.2, < 1.0)
@@ -218,6 +219,7 @@ DEPENDENCIES
   alba
   bootsnap
   debug
+  dotenv
   ember-cli-rails
   pg (~> 1.1)
   puma (>= 5.0)
