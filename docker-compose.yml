@@ -3,9 +3,9 @@ services:
     build: .
     environment:
       DB_HOST: db
-      DB_NAME: ruby_rover_development
-      DB_USERNAME: ruby_rover
-      DB_PASSWORD: ruby_rover
+      DATABASE_NAME: ruby_rover_development
+      DATABASE_USERNAME: rails
+      DATABASE_PASSWORD: rails
     ports:
       - "3000:3000"
     depends_on:
@@ -14,11 +14,10 @@ services:
   db:
     image: postgres:16
     environment:
-      POSTGRES_DB: ruby_rover_development
-      POSTGRES_USER: ruby_rover
-      POSTGRES_PASSWORD: ruby_rover
-    ports:
-      - "5432:5432"
+      POSTGRES_USERNAME: rails
+      POSTGRES_PASSWORD: rails
+    expose:
+      - 5432
   redis:
     image: redis:7.0
     ports:

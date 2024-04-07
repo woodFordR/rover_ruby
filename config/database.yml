@@ -2,6 +2,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER_NAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port: 5432
 
 development:
   <<: *default
@@ -14,5 +18,3 @@ test:
 production:
   <<: *default
   database: ruby_rover_production
-  username: ruby_rover
-  password: <%= ENV["RUBY_ROVER_DATABASE_PASSWORD"] %>
