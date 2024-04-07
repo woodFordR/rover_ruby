@@ -7,6 +7,8 @@ WORKDIR /rails
 
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
+    SECRET_KEY_BASE=1 \
+    SECRET_KEY_BASE_DUMMY=1 \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development"
 
