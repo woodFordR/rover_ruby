@@ -1,0 +1,28 @@
+services:
+  app:
+    build: .
+    environment:
+      DB_HOST: db
+      DB_NAME: ruby_rover_development
+      DB_USERNAME: ruby_rover
+      DB_PASSWORD: ruby_rover
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      - redis
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: ruby_rover_development
+      POSTGRES_USER: ruby_rover
+      POSTGRES_PASSWORD: ruby_rover
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis:7.0
+    ports:
+      - "6379:6379"
+networks:
+  default:
+    name: ruby_rover_default
