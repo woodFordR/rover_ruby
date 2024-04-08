@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to start up the application
 
-Things you may want to cover:
+### A few reqs
+  - make sure postgresql is running in the background
+  - ruby 3.3.0
+  - node 21.7.1
+  - yarn
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### A few steps
+  - ```bundle```
+  - ```rails db:create db:migrate db:seed```
+  - ```rake ember:install```
+  - ```rails s```
+  
