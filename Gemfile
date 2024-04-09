@@ -14,6 +14,7 @@ gem "ember-cli-rails"
 # gem "kredis"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"clear
+gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
