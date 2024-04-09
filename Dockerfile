@@ -7,6 +7,9 @@ WORKDIR /rails
 
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
+    SECRET_KEY_BASE=1 \
+    POSTGRES_PASSWORD="rails" \
+    SECRET_KEY_BASE_DUMMY=1 \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development"
 
@@ -21,11 +24,7 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
-
-ARG RAILS_MASTER_KEY
-ENV RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
-
-
+    
 # Copy application code
 COPY . .
 
@@ -54,16 +53,10 @@ RUN useradd rails --create-home --shell /bin/bash && \
     chown -R rails:rails db log storage tmp
 USER rails:rails
 
-ARG RAILS_MASTER_KEY
-ENV RAILS_ENV=production \
-    RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
-
-
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
-
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
+
 CMD ["./bin/rails", "server"]
