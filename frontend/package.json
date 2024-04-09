@@ -83,6 +83,4 @@
     "@hashicorp/ember-flight-icons": "^5.0.1",
     "ember-cli-rails-addon": "woodFordR/ember-cli-rails-addon.git#master",
     "git": "^0.1.5"
-  },
-  "packageManager": "yarn@4.1.1"
-}
+  }
