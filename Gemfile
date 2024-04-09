@@ -7,6 +7,7 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "ember-cli-rails"
+# gem "ember-cli-rails-deploy-redis"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
@@ -23,3 +24,4 @@ group :development, :test do
   gem 'dotenv'
 end
 
+gem "rails_12factor", group: [:staging, :production]
