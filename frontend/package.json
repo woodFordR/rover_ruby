@@ -83,4 +83,10 @@
     "@hashicorp/ember-flight-icons": "^5.0.1",
     "ember-cli-rails-addon": "woodFordR/ember-cli-rails-addon.git#master",
     "git": "^0.1.5"
+<<<<<<< HEAD
   }
+=======
+  },
+  "packageManager": "yarn@4.1.1"
+}
+>>>>>>> de6ae83c (adding readme instructions for first time run, installed yarn which came with other goodies)
