@@ -43,6 +43,9 @@ class Api::V1::ProjectsController < ApplicationController
 
     # allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:description, :owner, :title, :logo)
+      params.require(:project).permit(
+        :avatar, :description, :owner, :title, :logo,
+        :code_description, :code_link, :code_snippet
+      )
     end
 end

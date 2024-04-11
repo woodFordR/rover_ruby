@@ -1,10 +1,15 @@
 class ProjectSerializer < ApplicationSerializer
   attribute :attributes do |obj|
     {
-      "title": obj.title, 
-      "owner": obj.owner, 
-      "description": obj.description, 
-      "logo": obj.logo 
+      "avatarPath": obj.avatar_path,
+      "codeDescription": obj.code_description,
+      "codeLink": obj.code_link,
+      "codeSnippet": obj.code_snippet,
+      "deployLink": obj.deploy_link,
+      "description": obj.description,
+      "logo": obj.logo,
+      "owner": obj.owner,
+      "title": obj.title
     }
   end
   attribute :id do |obj|
