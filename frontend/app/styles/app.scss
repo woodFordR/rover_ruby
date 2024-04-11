@@ -38,7 +38,6 @@ a {
 .card {
   display: flex;
   padding-left: 4em;
-  padding-bottom: 1em;
   span {
     padding: 1em 2em 2em 1em;
   }
@@ -58,17 +57,17 @@ a {
 
 }
 .code {
-  display: flex;
-  padding-left: 15%;
-  p {
-    padding-right: 1.5em;
-    display: inline-flex;
-  }
-  a {
-    padding-right: 3em;
-  }
-  .code-conainter {
-    width: 400em;
+  padding-left: 5%;
+  .code-container {
+    display: flex;
+    p {
+      padding-left: 3em;
+      padding-right: 1.5em;
+      display: inline-flex;
+    }
+    a {
+      padding-right: 3em;
+    }
   }
 }
 

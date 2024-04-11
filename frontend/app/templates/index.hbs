@@ -26,29 +26,28 @@
           <div class="card">
             <div class="avatar"><img src="{{project.avatarPath}}" alt="avatar" /></div>
             <p class="description">{{project.codeDescription}}</p>
+          </div>
+          <div class="code">
+            <div class="code-container">
+              <p>
+                code viewable at
+              </p>
+              <a href={{project.owner}}>
+                <Hds::IconTile @icon="github" @color={{project.logo}} @size="medium" />
+              </a>
             <p>
               deployed at
             </p>
             <a href={{project.deployLink}}>
               <Hds::IconTile @icon="running" @color={{project.logo}} @size="medium" />
             </a>
-          </div>
-          <div class="code">
-            <p>
-              code viewable at
-            </p>
-            <a href={{project.owner}}>
-              <Hds::IconTile @icon="github" @color={{project.logo}} @size="medium" />
-            </a>
-            <div class="code-container">
+            </div>
             <Hds::CodeBlock
               @language="javascript"
               @hasCopyButton={{true}}
               @value={{project.codeSnippet}}
             />
-            </div>
           </div>
-
           </:content>
       </A.Item>
       <Hds::Separator />
