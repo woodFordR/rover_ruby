@@ -35,7 +35,7 @@
           </div>
           <div class="code">
             <p>
-              code viewed at
+              code viewable at
             </p>
             <a href={{project.owner}}>
               <Hds::IconTile @icon="github" @color={{project.logo}} @size="medium" />
@@ -44,14 +44,7 @@
             <Hds::CodeBlock
               @language="javascript"
               @hasCopyButton={{true}}
-              @value="
-var coffeeLottie = lottie.loadAnimation({
-  container:coffeeSvg,
-  renderer:'svg',
-  loop:true,
-  autoplay:true,
-  path:'lottie/coffee.json'
-});"
+              @value={{project.codeSnippet}}
             />
             </div>
           </div>

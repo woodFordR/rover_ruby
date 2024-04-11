@@ -11,29 +11,68 @@
 logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
 
 [
-  # {
-  #   title: "emberman",
-  #   description: "A static ruby site built with middleman and emberjs.",
-  #   logo: "packer",
-  #   owner: "woodFordR"
-  # },
-  # {
-  #   title: "rr-blog",
-  #   description: "A blogging application built with ruby on rails and reactjs.",
-  #   logo: "waypoint",
-  #   owner: "woodFordR"
-  # },
-  # {
-  #   title: "superRentals",
-  #   description: "An emberjs application.",
-  #   logo: "vault",
-  #   owner: "woodFordR"
-  # },
+  {
+    code_snippet: "def grab_links(uri)\n" +
+      "\timage_urls = URI.open(uri) do |f|\n" +
+      "\t\tf.read.scan(/.*?<link.*?as=\"image\" href=(\".*?\").*?/m)\n" +
+      "\tend\n" +
+      "\timage_urls.map { |f| /.*(https.*\.png).*/.match(f[0])[1] }\n" +
+      "end",
+    code_description: "In this application, ",
+    code_link: "https://github.com/woodFordR/emberman/blob/main/extensions/image_tracker.rb",
+    deploy_link: "",
+    description: "A static ruby site built with middleman and emberjs.",
+    logo: "packer",
+    owner: "woodFordR",
+    title: "emberman",
+  },
+  {
+    code_snippet: "async function fetchAllPosts() {\n" +
+      "\tconst response = await fetch(\`${API_URL}\`);\n" +
+      "\tif (!response.ok) {\n" +
+      "\t\tthrow new Error(response.statusText);\n" +
+      "\t}\n" +
+      "\treturn response.json();\n" +
+      "}",
+    code_description: "In this application, ",
+    code_link: "https://github.com/woodFordR/rr-blog/blob/main/frontend/src/services/postService.js",
+    deploy_link: "",
+    description: "A blogging application built with ruby on rails and reactjs.",
+    logo: "waypoint",
+    owner: "woodFordR",
+    title: "rr-blog"
+  },
+  {
+    code_snippet: "import Component from '@glimmer/component';\n\n" +
+      "export default class RentalsFilterComponent extends Component {\n" +
+      "\tget results() {\n" +
+      "\t\tlet { rentals, query } = this.args;\n" +
+      "\t\tif (query) {\n" +
+      "\t\t\trentals = rentals.filter((rental) => rental.title.includes(query));\n" +
+      "\t\t}\n" +
+      "\treturn rentals;\n" +
+      "\t}\n" +
+      "}",
+    code_description: "In this application, ",
+    code_link: "https://github.com/woodFordR/superRentals/blob/main/app/components/rentals/filter.js",
+    deploy_link: "",
+    description: "An emberjs application.",
+    logo: "vault",
+    owner: "woodFordR",
+    title: "superRentals"
+  },
   {
     code_description: "In this blogging application, I have a snippet " +
       "of code written in JS displaying lottiefiles. Lottiefiles are animations " +
       "used for applications. This is a simple hover script for the coffee cup.",
     code_link: "https://github.com/woodFordR/blog/blob/main/_layouts/home.html#L49C1-L60C10",
+    code_snippet: "var coffeeLottie = lottie.loadAnimation({\n" +
+      "\tcontainer:coffeeSvg,\n" +
+      "\trenderer:'svg',\n" +
+      "\tloop:true,\n" +
+      "\tautoplay:true,\n" +
+      "\tpath:'lottie/coffee.json'\n" +
+      "});",
     deploy_link: "https://blog.kaewell.com",
     description: "A blog built with ruby and jekyll.rb",
     logo: "terraform",
