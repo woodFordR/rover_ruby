@@ -25,10 +25,25 @@
         <:content>
           <div class="card">
             <div class="avatar"><img src="{{project.avatarPath}}" alt="avatar" /></div>
-              <p>{{project.codeDescription}}</p>
-              <p>{{project.owner}}</p>
-            </div>
-        </:content>
+            <p>{{project.codeDescription}}</p>
+            <p><a href={{project.owner}}>
+              <Hds::IconTile @icon="github" @color={{project.logo}} @size="medium" />
+            </a></p>
+          </div>
+          <Hds::CodeBlock
+            @language="javascript"
+            @hasCopyButton={{true}}
+            @value="
+var coffeeLottie = lottie.loadAnimation({
+  container:coffeeSvg,
+  renderer:'svg',
+  loop:true,
+  autoplay:true,
+  path:'lottie/coffee.json'
+});"
+            />
+
+          </:content>
       </A.Item>
       <Hds::Separator />
     {{/each}}

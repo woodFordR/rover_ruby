@@ -30,28 +30,19 @@ a {
 .card {
   display: flex;
   span {
-    padding: 1em 0 0 1em;
+    padding: 1em 2em 2em 1em;
   }
   p {
     padding: 0.5em 1.5em 0 1.5em;
     font-size: small;
     float: inline-end;
   }
+
   .avatar img {
-    background-size: contain;
-    background-repeat: no-repeat;
     height: 100px;
     width: 100px;
-    position: right;
+    padding-right: 4em;
   }
-  .code {
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 200px;
-    width: 200px;
-    position: relative;
-  }
-
 }
 
 .hds-accordion-item {
