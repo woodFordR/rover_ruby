@@ -16,7 +16,7 @@
     {{#each @model as |project|}}
       <A.Item>
         <:toggle>
-          <div class="card">
+          <div class="icon-card">
             <Hds::IconTile @logo={{project.logo}} @size="large" />
             <span>{{project.title}}</span>
             <span>{{project.description}}</span>
@@ -25,15 +25,26 @@
         <:content>
           <div class="card">
             <div class="avatar"><img src="{{project.avatarPath}}" alt="avatar" /></div>
-            <p>{{project.codeDescription}}</p>
-            <p><a href={{project.owner}}>
-              <Hds::IconTile @icon="github" @color={{project.logo}} @size="medium" />
-            </a></p>
+            <p class="description">{{project.codeDescription}}</p>
+            <p>
+              deployed at
+            </p>
+            <a href={{project.deployLink}}>
+              <Hds::IconTile @icon="running" @color={{project.logo}} @size="medium" />
+            </a>
           </div>
-          <Hds::CodeBlock
-            @language="javascript"
-            @hasCopyButton={{true}}
-            @value="
+          <div class="code">
+            <p>
+              code viewed at
+            </p>
+            <a href={{project.owner}}>
+              <Hds::IconTile @icon="github" @color={{project.logo}} @size="medium" />
+            </a>
+            <div class="code-container">
+            <Hds::CodeBlock
+              @language="javascript"
+              @hasCopyButton={{true}}
+              @value="
 var coffeeLottie = lottie.loadAnimation({
   container:coffeeSvg,
   renderer:'svg',
@@ -42,6 +53,8 @@ var coffeeLottie = lottie.loadAnimation({
   path:'lottie/coffee.json'
 });"
             />
+            </div>
+          </div>
 
           </:content>
       </A.Item>

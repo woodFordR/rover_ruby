@@ -8,4 +8,5 @@ export default class Project extends Model {
   @attr('text') codeDescription;
   @attr('string') codeLink;
   @attr('string') avatarPath;
+  @attr('string') deployLink;
 }

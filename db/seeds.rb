@@ -30,14 +30,15 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
   #   owner: "woodFordR"
   # },
   {
-    title: "Woodford's Den",
-    description: "A blog built with ruby and jekyll.rb",
-    logo: "terraform",
-    owner: "https://github.com/woodFordR/blog",
     code_description: "In this blogging application, I have a snippet " +
       "of code written in JS displaying lottiefiles. Lottiefiles are animations " +
       "used for applications. This is a simple hover script for the coffee cup.",
-    code_link: "https://github.com/woodFordR/blog/blob/main/_layouts/home.html#L49C1-L60C10"
+    code_link: "https://github.com/woodFordR/blog/blob/main/_layouts/home.html#L49C1-L60C10",
+    deploy_link: "https://blog.kaewell.com",
+    description: "A blog built with ruby and jekyll.rb",
+    logo: "terraform",
+    owner: "https://github.com/woodFordR/blog",
+    title: "Woodford's Den"
   }
 ].each do |project|
   Project.create(project)

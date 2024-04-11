@@ -4,6 +4,7 @@ class ProjectSerializer < ApplicationSerializer
       "avatarPath": obj.avatar_path,
       "codeDescription": obj.code_description,
       "codeLink": obj.code_link,
+      "deployLink": obj.deploy_link,
       "description": obj.description,
       "logo": obj.logo,
       "owner": obj.owner,

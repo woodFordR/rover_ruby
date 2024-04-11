@@ -27,21 +27,48 @@ a {
   padding-left: 1em;
 }
 
+.icon-card {
+  display: flex;
+  padding-left: 2em;
+  span {
+    padding: 1em 2em 2em 2em;
+  }
+}
+
 .card {
   display: flex;
+  padding-left: 4em;
+  padding-bottom: 1em;
   span {
     padding: 1em 2em 2em 1em;
   }
   p {
-    padding: 0.5em 1.5em 0 1.5em;
+    display: inline-flex;
+    padding: 0.5em 1.5em 1em 1.5em;
     font-size: small;
-    float: inline-end;
+  }
+  .description {
+    width: 60%;
   }
 
   .avatar img {
     height: 100px;
-    width: 100px;
     padding-right: 4em;
+  }
+
+}
+.code {
+  display: flex;
+  padding-left: 15%;
+  p {
+    padding-right: 1.5em;
+    display: inline-flex;
+  }
+  a {
+    padding-right: 3em;
+  }
+  .code-conainter {
+    width: 400em;
   }
 }
 
