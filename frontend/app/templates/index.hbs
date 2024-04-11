@@ -20,12 +20,11 @@
             <Hds::IconTile @logo={{project.logo}} @size="large" />
             <span>{{project.title}}</span>
             <span>{{project.description}}</span>
-            <div class="avatar"><img src="{{project.avatar}}" alt="/favicon.png" /></div>
           </div>
         </:toggle>
         <:content>
           <div class="card">
-            <div class="code"><img src={{project.codeImage}} alt="/favicon.png" /></div>
+            <div class="avatar"><img src="{{project.avatarPath}}" alt="avatar" /></div>
               <p>{{project.codeDescription}}</p>
               <p>{{project.owner}}</p>
             </div>

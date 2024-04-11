@@ -34,13 +34,11 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
     description: "A blog built with ruby and jekyll.rb",
     logo: "terraform",
     owner: "https://github.com/woodFordR/blog",
-    avatar: File.open(Rails.root.join('public', 'images', 'blog_avatar.png')),
-    code_image: File.open(Rails.root.join('public', 'images', 'blog_code.png')),
     code_description: "In this blogging application, I have a snippet " +
       "of code written in JS displaying lottiefiles. Lottiefiles are animations " +
       "used for applications. This is a simple hover script for the coffee cup.",
     code_link: "https://github.com/woodFordR/blog/blob/main/_layouts/home.html#L49C1-L60C10"
   }
 ].each do |project|
-  repo = Project.create(project)
+  Project.create(project)
 end

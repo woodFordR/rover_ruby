@@ -7,6 +7,5 @@ export default class Project extends Model {
   @attr('string') owner;
   @attr('text') codeDescription;
   @attr('string') codeLink;
-  @attr('string') codeImage;
-  @attr('string') avatar;
+  @attr('string') avatarPath;
 }

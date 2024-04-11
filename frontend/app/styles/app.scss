@@ -37,12 +37,12 @@ a {
     font-size: small;
     float: inline-end;
   }
-  .avatar {
+  .avatar img {
     background-size: contain;
     background-repeat: no-repeat;
-    height: 200px;
-    width: 200px;
-    position: relative;
+    height: 100px;
+    width: 100px;
+    position: right;
   }
   .code {
     background-size: contain;
