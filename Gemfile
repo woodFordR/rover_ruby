@@ -10,6 +10,7 @@ gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "rack-cors"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
+gem "rails_12factor", group: [:staging, :production]
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 # gem "ember-cli-rails-deploy-redis"
 # gem "redis", ">= 4.0.1"
@@ -20,5 +21,3 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem 'dotenv'
 end
-
-gem "rails_12factor", group: [:staging, :production]

@@ -37,6 +37,21 @@ a {
     font-size: small;
     float: inline-end;
   }
+  .avatar {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    position: relative;
+  }
+  .code {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    position: relative;
+  }
+
 }
 
 .hds-accordion-item {

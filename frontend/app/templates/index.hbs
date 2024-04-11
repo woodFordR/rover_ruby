@@ -19,11 +19,16 @@
           <div class="card">
             <Hds::IconTile @logo={{project.logo}} @size="large" />
             <span>{{project.title}}</span>
-            <p>{{project.owner}}</p>
+            <span>{{project.description}}</span>
+            <div class="avatar"><img src="{{project.avatar}}" alt="/favicon.png" /></div>
           </div>
         </:toggle>
         <:content>
-          <h2>{{project.description}}</h2>
+          <div class="card">
+            <div class="code"><img src={{project.codeImage}} alt="/favicon.png" /></div>
+              <p>{{project.codeDescription}}</p>
+              <p>{{project.owner}}</p>
+            </div>
         </:content>
       </A.Item>
       <Hds::Separator />

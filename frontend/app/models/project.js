@@ -2,7 +2,11 @@ import Model, { attr } from '@ember-data/model';
 
 export default class Project extends Model {
   @attr('string') title;
-  @attr('string') description;
+  @attr('text') description;
   @attr('string') logo;
   @attr('string') owner;
+  @attr('text') codeDescription;
+  @attr('string') codeLink;
+  @attr('string') codeImage;
+  @attr('string') avatar;
 }
