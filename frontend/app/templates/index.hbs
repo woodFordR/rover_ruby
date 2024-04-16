@@ -17,14 +17,14 @@
       <A.Item>
         <:toggle>
           <div class="icon-card">
-            <Hds::IconTile @logo={{project.logo}} @size="large" />
+            <Hds::IconTile @logo={{project.logo}} @size="large"/>
             <span>{{project.title}}</span>
             <span>{{project.description}}</span>
           </div>
         </:toggle>
         <:content>
           <div class="card">
-            <div class="avatar"><img src="{{project.avatarPath}}" alt="avatar" /></div>
+            <div class="avatar"><Hds::IconTile @logo={{project.logo}} @size="large" /></div>
             <p class="description">{{project.codeDescription}}</p>
           </div>
           <div class="code">
@@ -33,13 +33,13 @@
                 code viewable at
               </p>
               <a href={{project.owner}}>
-                <Hds::IconTile @icon="github" @color={{project.logo}} @size="medium" />
+                <Hds::IconTile @icon="terminal" @color={{project.logo}} @size="large" />
               </a>
             <p>
               deployed at
             </p>
             <a href={{project.deployLink}}>
-              <Hds::IconTile @icon="running" @color={{project.logo}} @size="medium" />
+              <Hds::IconTile @icon="cloud-upload" @color={{project.logo}} @size="large" />
             </a>
             </div>
             <Hds::CodeBlock

@@ -78,6 +78,37 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
     logo: "terraform",
     owner: "https://github.com/woodFordR/blog",
     title: "Woodford's Den"
+  },
+  {
+    code_snippet:
+      "module Cookbook\n" +
+      "\tmodule Views\n" +
+      "\t\tmodule Views\n" +
+      "\t\t\tmodule Home\n" +
+      "\t\t\t\tclass Show < Cookbook::View\n" +
+      "\t\t\t\t\texpose :recipes do\n" +
+      "\t\t\t\t\t\t[\n" +
+      "\t\t\t\t\t\t\t{\n" +
+      "\t\t\t\t\t\t\t\tname: \"Cinnamon Rolls\",\n" +
+      "\t\t\t\t\t\t\t\tdescription: \"Big, fluffy, soft and absolutely delicious...\"\n" +
+      "\t\t\t\t\t\t\t}\n" +
+      "\t\t\t\t\t\tend\n" +
+      "\t\t\t\t\tend\n" +
+      "\t\t\t\tend\n" +
+      "\t\t\tend\n" +
+      "\t\tend\n" +
+      "\tend\n" +
+      "end",
+    code_description: "In hanami is all the 'App' code lives in the same " +
+      "namespace and shares our app's name. It is very quick to mock " +
+      "data for our homepage view which is useful for TDD. This is the view code " +
+      "for our root page.",
+    code_link: "https://github.com/woodFordR/cookbook/blob/main/app/views/home/show.rb",
+    deploy_link: "",
+    description: "A refreshing hanami app built with ruby.",
+    logo: "nomad",
+    owner: "woodFordR",
+    title: "cookbook"
   }
 ].each do |project|
   Project.create(project)
