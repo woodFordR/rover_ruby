@@ -32,15 +32,20 @@
               <p>
                 code viewable at
               </p>
-              <a href={{project.owner}}>
+              <a href={{project.codeLink}}>
                 <Hds::IconTile @icon="terminal" @color={{project.logo}} @size="large" />
               </a>
-            <p>
-              deployed at
-            </p>
-            <a href={{project.deployLink}}>
-              <Hds::IconTile @icon="cloud-upload" @color={{project.logo}} @size="large" />
-            </a>
+              {{#if project.deployLink }}
+                <p> deployed at </p>
+                <a href={{project.deployLink}}>
+                  <Hds::IconTile @icon="cloud-upload" @color={{project.logo}} @size="large" />
+                </a>
+              {{else}}
+                <p> not deployed yet </p>
+                <a href="#">
+                  <Hds::IconTile @icon="cloud-off" @color={{project.logo}} @size="large" />
+                </a>
+              {{/if}}
             </div>
             <Hds::CodeBlock
               @language="javascript"
