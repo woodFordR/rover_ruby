@@ -17,7 +17,7 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
       "\t\tf.read.scan(/.*?<link.*?as=\"image\" href=(\".*?\").*?/m)\n" +
       "\tend\n" +
       "\timage_urls.map { |f| /.*(https.*\.png).*/.match(f[0])[1] }\n" +
-      "end",
+      "end\n",
     code_description: "In this application, ",
     code_link: "https://github.com/woodFordR/emberman/blob/main/extensions/image_tracker.rb",
     deploy_link: "",
@@ -33,7 +33,7 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
       "\t\tthrow new Error(response.statusText);\n" +
       "\t}\n" +
       "\treturn response.json();\n" +
-      "}",
+      "}\n",
     code_description: "In this application, ",
     code_link: "https://github.com/woodFordR/rr-blog/blob/main/frontend/src/services/postService.js",
     deploy_link: "",
@@ -52,7 +52,7 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
       "\t\t}\n" +
       "\treturn rentals;\n" +
       "\t}\n" +
-      "}",
+      "}\n",
     code_description: "In this application, ",
     code_link: "https://github.com/woodFordR/superRentals/blob/main/app/components/rentals/filter.js",
     deploy_link: "",
@@ -72,7 +72,7 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
       "\tloop:true,\n" +
       "\tautoplay:true,\n" +
       "\tpath:'lottie/coffee.json'\n" +
-      "});",
+      "});\n",
     deploy_link: "https://blog.kaewell.com",
     description: "A blog built with ruby and jekyll.rb",
     logo: "terraform",
@@ -92,17 +92,17 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
       "\t\t\t\t\t\t\t\tname: \"Cinnamon Rolls\",\n" +
       "\t\t\t\t\t\t\t\tdescription: \"Big, fluffy, soft and absolutely delicious...\"\n" +
       "\t\t\t\t\t\t\t}\n" +
-      "\t\t\t\t\t\tend\n" +
+      "\t\t\t\t\t\t]\n" +
       "\t\t\t\t\tend\n" +
       "\t\t\t\tend\n" +
       "\t\t\tend\n" +
       "\t\tend\n" +
       "\tend\n" +
-      "end",
-    code_description: "In hanami is all the 'App' code lives in the same " +
-      "namespace and shares our app's name. It is very quick to mock " +
-      "data for our homepage view which is useful for TDD. This is the view code " +
-      "for our root page.",
+      "end\n",
+    code_description: "In hanami all the 'App' code lives in the same " +
+      "namespace and shares the same name. It is very quick to mock " +
+      "data for a homepage view. This is the view class " +
+      "for the root page.",
     code_link: "https://github.com/woodFordR/cookbook/blob/main/app/views/home/show.rb",
     deploy_link: "",
     description: "A refreshing hanami app built with ruby.",
