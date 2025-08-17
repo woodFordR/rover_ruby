@@ -3,10 +3,10 @@ import config from 'frontend/config/environment';
 
 export default class Router extends EmberRouter {
   location = config.locationType;
-  rootURL = config.rootURL;
+  rootURL = config.apiURL;
 }
 
-Router.map(function () {
+Router.map(function() {
   this.route('about');
   this.route('contact');
 });
