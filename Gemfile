@@ -3,9 +3,13 @@ source "https://rubygems.org"
 ruby "3.4.5"
 
 gem "alba"
+gem "benchmark"
 gem "bootsnap", require: false
 gem "ember-cli-rails"
+gem "fiddle"
 gem "image_processing", "~> 1.2"
+gem "logger"
+gem "ostruct"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
 gem "rack-cors"
@@ -16,10 +20,6 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # gem "redis", ">= 4.0.1"
 # gem "kredis"
 # gem "bcrypt", "~> 3.1.7"
-gem "logger"
-gem "ostruct"
-gem "fiddle"
-gem "benchmark"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
