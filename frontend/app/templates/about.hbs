@@ -1,5 +1,5 @@
 <Hds::PageHeader as |PH|>
-  <div class="biggest-h"><PH.Title>About Me</PH.Title></div>
+  <div class="biggest-h"><PH.Title>Character</PH.Title></div>
   <PH.Breadcrumb>
     <Hds::Breadcrumb>
       <Hds::Breadcrumb::Item @text="project" @icon="layers" />
@@ -8,22 +8,32 @@
   </PH.Breadcrumb>
   <PH.Badges>
     <center>
-      <Hds::Badge @text="Name: Adam Kaewell" @icon="zap" @color="warning" @type="inverted" @iconPosition="trailing" @size="large" />
+      <Hds::Badge @text="Development 🡘 Staging 🡘 Production" @icon="zap" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
     </center>
   </PH.Badges>
 </Hds::PageHeader>
 <div class="container">
   <address>
-    <br><br>
-    <Hds::Badge @text="From Philadelphia Cheesesteaks 🧀🐄 to Lexington Horses 🏇 & Bourbon 🥃" @icon="zap" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
-    <br><br>
-    <Hds::Badge @text="I'm a father && chocolate lab owner && devops, backend, software engineer" @icon="zap" @color="highlight" @type="inverted" @iconPosition="trailing" @size="large" />
-    <br><br>
-    <Hds::Badge @text="I enjoy exercising at the gym, hot yoga, golfing with friends, volleyball, great sushi, and all things green" @icon="zap" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
-    <br><br>
-    <Hds::Badge @text="I've worked for several startup companies in person & remote. I'm passionate about solving problems, teamwork, and learning new skills" @icon="zap" @color="highlight" @type="inverted" @iconPosition="trailing" @size="large" />
-    <br><br>
-    <Hds::Badge @text="Email: adam@kaewell.com" @icon="zap" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
-    <br><br>
+    <br />
+    <ul class="about-card-list">
+      <Hds::Card::Container @tag="li" @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
+        <Hds::Badge @text="work in progress" @icon="zap" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
+        <br />
+        <br />
+        <p class="hds-typography-display-300">
+          I was born in the great city of Philadelphia, PA and landed in
+          Lexington, KY with horses 🏇 and bourbon 🥃. I've been here since
+          2015 and have no regrets. I'm a father && chocolate lab owner &&
+          devops, backend, software engineer. I enjoy exercising at the gym,
+          meditation, yoga, golf, volleyball, great sushi, local new food, and
+          all things green. I've worked for several startup companies which is
+          why I took a risk in moving here before working from home became
+          popular. I show up regardless if the job is in person or remote. I'm
+          a passionate, dedicated bot who remains compassionate about solving
+          difficult problems, team work to make the dream work, and learning
+          new tools and skills along the journey.
+        </p>
+      </Hds::Card::Container>
+    </ul>
   </address>
 </div>

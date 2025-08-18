@@ -1,21 +1,44 @@
 <Hds::PageHeader as |PH|>
-  <div class="biggest-h"><PH.Title>contact the help</PH.Title></div>
+  <div class="biggest-h"><PH.Title>Experience</PH.Title></div>
   <PH.Breadcrumb>
     <Hds::Breadcrumb>
       <Hds::Breadcrumb::Item @text="project" @icon="layers" />
       <Hds::Breadcrumb::Item @text="contact" @icon="mail" />
     </Hds::Breadcrumb>
   </PH.Breadcrumb>
-  <PH.Badges>
-    <Hds::Badge @text="in progress" @icon="rocket" @color="neutral-dark-mode" @iconPosition="trailing" />
-  </PH.Badges>
+  <center>
+    <PH.Badges>
+      <Hds::Badge @text="Work History 🡘 Preferred Contact" @icon="history" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
+    </PH.Badges>
+  </center>
 </Hds::PageHeader>
 
 <div class="container">
   <address>
-    <p>name: adam</p>
-    <Hds::Badge @text="github & email" @icon="rocket" @color="neutral-dark-mode" @iconPosition="trailing" />
-    <br><br>
-    <a href="mailto:adam@kaewell.com">my chocolate lab woodford handles my email</a>
+  <br />
+    <ul class="exp-card-list">
+      <Hds::Card::Container @tag="li" @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
+        <Hds::Badge @text="Scala Computing Inc." @icon="history" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
+        <br />
+        <br />
+        <p class="hds-typography-display-300">
+          From October 2024 until June 2025, I helped build a Textual Python
+          application which connected a user to their simulated network that
+          was created, deployed using Pulumi, Firecracker to a AWS bare metal
+          server. It provided a secure, quick connection without gaining
+          access to sensitive information.
+        </p>
+      </Hds::Card::Container>
+      <br />
+      <br />
+      <Hds::Card::Container @tag="li" @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
+        <Hds::Badge @text="Email Address" @icon="mail" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
+        <br />
+        <br />
+        <p class="hds-typography-display-300">
+          adam@kaewell.com
+        </p>
+      </Hds::Card::Container>
+    </ul>
   </address>
 </div>

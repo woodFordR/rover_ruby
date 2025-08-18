@@ -4,14 +4,14 @@
 body {
   // background-color: var(--token-color-nomad-gradient-primary-start);
   padding-top: 1em;
-  background: linear-gradient(
-    -45deg,
-    var(--token-color-packer-gradient-primary-stop),
-    var(--token-color-nomad-gradient-primary-stop));
+  background: linear-gradient(-45deg,
+      var(--token-color-packer-gradient-primary-stop),
+      var(--token-color-nomad-gradient-primary-stop));
   background-size: 400%;
   animation: gradient 10s ease infinite;
   height: 100vh;
-  color: var(--token-color-packer-foreground);
+  // color: var(--token-color-packer-foreground);
+  color: var(--token-color-palette-green-300)
 }
 
 aside {
@@ -30,6 +30,7 @@ a {
 .icon-card {
   display: flex;
   padding-left: 2em;
+
   span {
     padding: 1em 2em 2em 2em;
   }
@@ -38,14 +39,17 @@ a {
 .card {
   display: flex;
   padding-left: 4em;
+
   span {
     padding: 1em 2em 2em 1em;
   }
+
   p {
     display: inline-flex;
     padding: 0.5em 1.5em 1em 1.5em;
     font-size: small;
   }
+
   .description {
     width: 60%;
   }
@@ -56,16 +60,20 @@ a {
   }
 
 }
+
 .code {
   padding-left: 5%;
+
   .code-container {
     display: flex;
     padding-bottom: 1.5em;
+
     p {
       padding-left: 3em;
       padding-right: 1.5em;
       display: inline-flex;
     }
+
     a {
       padding-right: 3em;
     }
@@ -74,10 +82,9 @@ a {
 
 .hds-accordion-item {
   // background-color: var(--token-color-nomad-gradient-primary-start);
-  background: linear-gradient(
-    -45deg,
-    var(--token-color-packer-gradient-primary-start),
-    var(--token-color-nomad-gradient-primary-start));
+  background: linear-gradient(-45deg,
+      var(--token-color-packer-gradient-primary-start),
+      var(--token-color-nomad-gradient-primary-start));
   background-size: 400%;
   animation: gradient 10s ease infinite;
 }
@@ -87,14 +94,32 @@ a {
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
+.hds-card__container {
+  background: linear-gradient(-45deg,
+      var(--token-color-packer-gradient-primary-start),
+      var(--token-color-nomad-gradient-primary-start));
+  background-size: 400%;
+  animation: gradient 10s ease infinite;
+  display: block;
+  padding: 24px 16px;
+  border-radius: inherit;
+
+  &:focus,
+  &:focus-visible {
+    box-shadow: var(--token-color-palette-green-300);
+    border-radius: round(1.5)
+  }
+}
