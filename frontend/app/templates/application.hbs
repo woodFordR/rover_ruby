@@ -1,45 +1,88 @@
 <Hds::AppFrame @hasHeader={{true}} @hasSidebar={{true}} @hasFooter={{true}} as |Frame|>
   <Frame.Sidebar>
-    <Hds::Button
-      @isIconOnly={{true}}
-      @icon="home"
-      @route="index"
-      @text="Home"
-      @color="tertiary"
-      @size="large"
-    />
-    <Hds::Button
-      @isIconOnly={{true}}
-      @icon="code"
-      @route="portfolio"
-      @text="Portfolio"
-      @color="tertiary"
-      @size="large"
-    />
-    <Hds::Button
-      @isIconOnly={{true}}
-      @icon="user"
-      @route="about"
-      @text="About"
-      @color="tertiary"
-      @size="large"
-    />
-    <Hds::Button
-      @isIconOnly={{true}}
-      @icon="mail"
-      @route="contact"
-      @text="Contact"
-      @color="tertiary"
-      @size="large"
-    />
+    <Hds::Layout::Flex
+      @direction="column"
+      @gap="16"
+    as |LF|>
+      <LF.Item>
+        <Hds::Button
+          @icon="home"
+          @route="index"
+          @text="Home"
+          @color="tertiary"
+          @size="large"
+        />
+      </LF.Item>
+      <LF.Item>
+        <Hds::Button
+          @icon="code"
+          @route="portfolio"
+          @text="Portfolio"
+          @color="tertiary"
+          @size="large"
+        />
+      </LF.Item>
+      <LF.Item>
+        <Hds::Button
+          @icon="user"
+          @route="about"
+          @text="About"
+          @color="tertiary"
+          @size="large"
+        />
+      </LF.Item>
+      <LF.Item>
+        <Hds::Button
+          @icon="mail"
+          @route="contact"
+          @text="Contact"
+          @color="tertiary"
+          @size="large"
+        />
+      </LF.Item>
+    </Hds::Layout::Flex>
   </Frame.Sidebar>
 
   <Frame.Main>
     {{outlet}}
   </Frame.Main>
   <Frame.Footer>
-    <Hds::Text::Display @tag="p" @align="center" @size="200">
-      A Father, Son, Brother, Friend, and Software Engineer to the world.
-    </Hds::Text::Display>
+    <Hds::Separator />
+    <Hds::Layout::Flex @align="center" @gap="32" as |LF|>
+      <LF.Item>
+        <Hds::Badge @text="Operational" @color="success" @icon="check-circle" />
+      </LF.Item>
+      <LF.Item>
+        <Hds::Text::Body @tag="span" @size="200">
+          Adam Kaewell
+        </Hds::Text::Body>
+      </LF.Item>
+      <LF.Item>
+        <Hds::Text::Body @tag="span" @size="200">
+          <Hds::Link::Inline
+            @icon="twitter"
+            @iconPosition="leading"
+            @href="https://twitter.com/akaewell"
+          >
+            X.com
+          </Hds::Link::Inline>
+        </Hds::Text::Body>
+      </LF.Item>
+      <LF.Item>
+        <Hds::Text::Body @tag="span" @size="200">
+          <Hds::Link::Inline
+            @icon="github"
+            @iconPosition="leading"
+            @href="https://github.com/woodFordR"
+          >
+            Github
+          </Hds::Link::Inline>
+        </Hds::Text::Body>
+      </LF.Item>
+      <LF.Item>
+        <Hds::Badge @text="Version 2.0" @color="success" @icon="robot" />
+      </LF.Item>
+    </Hds::Layout::Flex>
+    <Hds::Separator />
   </Frame.Footer>
 </Hds::AppFrame>
