@@ -1,8 +1,18 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 @import "@hashicorp/design-system-components";
 
+#hds-main {
+  padding: 5em 10em 0 5em;
+}
+
+footer {
+  padding: 1em 0 2em;
+}
+
+aside {
+  padding: 2em 4em;
+}
+
 body {
-  // background-color: var(--token-color-nomad-gradient-primary-start);
   padding-top: 1em;
   background: linear-gradient(-45deg,
       var(--token-color-packer-gradient-primary-stop),
@@ -10,21 +20,12 @@ body {
   background-size: 400%;
   animation: gradient 10s ease infinite;
   height: 100vh;
-  // color: var(--token-color-packer-foreground);
   color: var(--token-color-palette-green-300)
-}
-
-aside {
-  padding: 2em 4em;
 }
 
 a {
   text-decoration: none;
-  color: var(--token-color-packer-foreground);
-}
-
-.biggest-h {
-  padding-left: 1em;
+  color: var(--token-color-palette-green-400);
 }
 
 .icon-card {
@@ -89,10 +90,6 @@ a {
   animation: gradient 10s ease infinite;
 }
 
-.container {
-  padding: 0 10em 0 5em;
-}
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -114,7 +111,7 @@ a {
   background-size: 400%;
   animation: gradient 10s ease infinite;
   display: block;
-  padding: 24px 16px;
+  padding: 2.25em 1.75em;
   border-radius: inherit;
 
   &:focus,

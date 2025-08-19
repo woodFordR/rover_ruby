@@ -1,0 +1,53 @@
+<Hds::PageHeader as |PH|>
+  <PH.Title>Portfolio</PH.Title>
+  <PH.Badges>
+    <Hds::Badge @text="Current Projects" @icon="database" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
+  </PH.Badges>
+</Hds::PageHeader>
+<Hds::Separator />
+<Hds::Accordion as |A|>
+  {{#each @model as |project|}}
+    <A.Item>
+      <:toggle>
+        <div class="icon-card">
+          <Hds::IconTile @logo={{project.logo}} @size="large"/>
+          <span>{{project.title}}</span>
+          <span>{{project.description}}</span>
+        </div>
+      </:toggle>
+      <:content>
+        <div class="card">
+          <div class="avatar"><Hds::IconTile @logo={{project.logo}} @size="large" /></div>
+          <p class="description">{{project.codeDescription}}</p>
+        </div>
+        <div class="code">
+          <div class="code-container">
+            <p>
+              code viewable at
+            </p>
+            <a href={{project.codeLink}}>
+              <Hds::IconTile @icon="terminal" @color={{project.logo}} @size="large" />
+            </a>
+            {{#if project.deployLink }}
+              <p> deployed at </p>
+              <a href={{project.deployLink}}>
+                <Hds::IconTile @icon="cloud-upload" @color={{project.logo}} @size="large" />
+              </a>
+            {{else}}
+              <p> not deployed yet </p>
+              <a href="#">
+                <Hds::IconTile @icon="cloud-off" @color={{project.logo}} @size="large" />
+              </a>
+            {{/if}}
+          </div>
+          <Hds::CodeBlock
+            @language="javascript"
+            @hasCopyButton={{true}}
+            @value={{project.codeSnippet}}
+          />
+        </div>
+        </:content>
+    </A.Item>
+    <Hds::Separator />
+  {{/each}}
+</Hds::Accordion>

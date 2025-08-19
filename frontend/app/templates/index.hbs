@@ -1,61 +1,49 @@
 <Hds::PageHeader as |PH|>
-  <div class="biggest-h"><PH.Title>adam's work</PH.Title></div>
-  <PH.Breadcrumb>
-    <Hds::Breadcrumb>
-      <Hds::Breadcrumb::Item @text="project" @icon="layers" />
-      <Hds::Breadcrumb::Item @text="portfolio" @icon="code" />
-    </Hds::Breadcrumb>
-  </PH.Breadcrumb>
+  <PH.Title>Adam Kaewell's Cloud</PH.Title>
   <PH.Badges>
-    <Hds::Badge @text="in progress" @icon="rocket" @color="neutral-dark-mode" @iconPosition="trailing" />
+    <Hds::Badge @text="Welcome Welcome Welcome" @icon="database" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
   </PH.Badges>
 </Hds::PageHeader>
-<div class="container">
-  <Hds::Separator />
-  <Hds::Accordion as |A|>
-    {{#each @model as |project|}}
-      <A.Item>
-        <:toggle>
-          <div class="icon-card">
-            <Hds::IconTile @logo={{project.logo}} @size="large"/>
-            <span>{{project.title}}</span>
-            <span>{{project.description}}</span>
-          </div>
-        </:toggle>
-        <:content>
-          <div class="card">
-            <div class="avatar"><Hds::IconTile @logo={{project.logo}} @size="large" /></div>
-            <p class="description">{{project.codeDescription}}</p>
-          </div>
-          <div class="code">
-            <div class="code-container">
-              <p>
-                code viewable at
-              </p>
-              <a href={{project.codeLink}}>
-                <Hds::IconTile @icon="terminal" @color={{project.logo}} @size="large" />
-              </a>
-              {{#if project.deployLink }}
-                <p> deployed at </p>
-                <a href={{project.deployLink}}>
-                  <Hds::IconTile @icon="cloud-upload" @color={{project.logo}} @size="large" />
-                </a>
-              {{else}}
-                <p> not deployed yet </p>
-                <a href="#">
-                  <Hds::IconTile @icon="cloud-off" @color={{project.logo}} @size="large" />
-                </a>
-              {{/if}}
-            </div>
-            <Hds::CodeBlock
-              @language="javascript"
-              @hasCopyButton={{true}}
-              @value={{project.codeSnippet}}
+<Hds::Separator />
+<Hds::Layout::Grid @columnMinWidth="33.33%" @gap="32" as |LG|>
+  <LG.Item @colspan={{3}}>
+    <Hds::Card::Container @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
+      <Hds::Layout::Grid @columnMinWidth="100%" @gap="16">
+        <Hds::Layout::Flex @align="center" @gap="8">
+          <Hds::IconTile @icon="image" @size="medium" />
+          <Hds::Text::Display @tag="h2" @size="300">
+            Recent Photos
+          </Hds::Text::Display>
+        </Hds::Layout::Flex>
+        <Hds::Layout::Grid @columnMinWidth="100%" @gap="8" as |LG|>
+          <LG.Item>
+            <Hds::Badge
+              @text="Beach Vacation August 2025"
+              @color="success"
+              @icon="check-circle"
             />
-          </div>
-          </:content>
-      </A.Item>
-      <Hds::Separator />
-    {{/each}}
-  </Hds::Accordion>
-</div>
+          </LG.Item>
+          <Hds::Text::Body @tag="p">
+            Here are some photos from my recent trip to the Jersey shore.
+          </Hds::Text::Body>
+        </Hds::Layout::Grid>
+        <Hds::Link::Standalone
+          @icon="arrow-right"
+          @iconPosition="trailing"
+          @text="View more photos"
+          @href="#"
+        />
+      </Hds::Layout::Grid>
+    </Hds::Card::Container>
+  </LG.Item>
+  <Hds::Card::Container @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
+    <Hds::Text::Display @tag="h2" @size="300">Card</Hds::Text::Display>
+  </Hds::Card::Container>
+  <Hds::Card::Container @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
+    <Hds::Text::Display @tag="h2" @size="300">Card #2</Hds::Text::Display>
+  </Hds::Card::Container>
+
+  <Hds::Card::Container @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
+    <Hds::Text::Display @tag="h2" @size="300">Card #3</Hds::Text::Display>
+  </Hds::Card::Container>
+</Hds::Layout::Grid>
