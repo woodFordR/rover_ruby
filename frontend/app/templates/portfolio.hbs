@@ -5,49 +5,48 @@
   </PH.Badges>
 </Hds::PageHeader>
 <Hds::Separator />
-<Hds::Accordion as |A|>
-  {{#each @model as |project|}}
-    <A.Item>
-      <:toggle>
-        <div class="icon-card">
-          <Hds::IconTile @logo={{project.logo}} @size="large"/>
-          <span>{{project.title}}</span>
-          <span>{{project.description}}</span>
-        </div>
-      </:toggle>
-      <:content>
-        <div class="card">
-          <div class="avatar"><Hds::IconTile @logo={{project.logo}} @size="large" /></div>
-          <p class="description">{{project.codeDescription}}</p>
-        </div>
-        <div class="code">
-          <div class="code-container">
-            <p>
-              code viewable at
-            </p>
-            <a href={{project.codeLink}}>
-              <Hds::IconTile @icon="terminal" @color={{project.logo}} @size="large" />
-            </a>
-            {{#if project.deployLink }}
-              <p> deployed at </p>
-              <a href={{project.deployLink}}>
-                <Hds::IconTile @icon="cloud-upload" @color={{project.logo}} @size="large" />
-              </a>
-            {{else}}
-              <p> not deployed yet </p>
-              <a href="#">
-                <Hds::IconTile @icon="cloud-off" @color={{project.logo}} @size="large" />
-              </a>
-            {{/if}}
-          </div>
-          <Hds::CodeBlock
-            @language="javascript"
-            @hasCopyButton={{true}}
-            @value={{project.codeSnippet}}
-          />
-        </div>
-        </:content>
-    </A.Item>
-    <Hds::Separator />
-  {{/each}}
-</Hds::Accordion>
+<ul class="portfolio-card-list">
+  <Hds::Layout::Grid @columnMinWidth="50%" @gap="32">
+    {{#each @model as |project|}}
+      <Hds::Card::Container @tag="li" @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
+        <Hds::Layout::Grid @columnMinWidth="100%" @gap="16" as |LG|>
+            <LG.Item>
+              <Hds::Layout::Flex @align="start" @gap="16">
+                <Hds::IconTile @logo={{project.logo}} @size="large" />
+                <Hds::Layout::Flex @direction="column" @gap="8">
+                  <Hds::Text::Display @tag="h3" @size="400">
+                    {{project.title}}
+                  </Hds::Text::Display>
+                  {{#if project.deployLink }}
+                    <LG.Item>
+                      <a href={{project.deployLink}}>
+                        <Hds::Badge @text="Deployed Application" @color="success" @icon="check-circle" />
+                      </a>
+                    </LG.Item>
+                  {{else}}
+                    <LG.Item>
+                      <Hds::Badge @text="Still In Development" @color="warning" @icon="change-circle" />
+                    </LG.Item>
+                  {{/if}}
+                  <Hds::Text::Body @tag="p" @size="300">
+                    {{project.description}}
+                  </Hds::Text::Body>
+                </Hds::Layout::Flex>
+              </Hds::Layout::Flex>
+            </LG.Item>
+        </Hds::Layout::Grid>
+        <Hds::Separator />
+        <Hds::CodeBlock
+          @language="javascript"
+          @hasCopyButton={{true}}
+          @value={{project.codeSnippet}}
+          @hasLineNumbers={{false}}
+        as |CB|>
+          <CB.Description>
+            {{project.codeDescription}}
+          </CB.Description>
+        </Hds::CodeBlock>
+      </Hds::Card::Container>
+    {{/each}}
+  </Hds::Layout::Grid>
+</ul>

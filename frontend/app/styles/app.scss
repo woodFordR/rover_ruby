@@ -28,38 +28,10 @@ a {
   color: var(--token-color-palette-green-400);
 }
 
-.icon-card {
-  display: flex;
-  padding-left: 2em;
-
-  span {
-    padding: 1em 2em 2em 2em;
-  }
-}
-
-.card {
-  display: flex;
-  padding-left: 4em;
-
-  span {
-    padding: 1em 2em 2em 1em;
-  }
-
+.portfolio-card-title {
   p {
-    display: inline-flex;
-    padding: 0.5em 1.5em 1em 1.5em;
-    font-size: small;
+    font-size: medium;
   }
-
-  .description {
-    width: 60%;
-  }
-
-  .avatar img {
-    height: 100px;
-    padding-right: 4em;
-  }
-
 }
 
 .code {
@@ -82,7 +54,6 @@ a {
 }
 
 .hds-accordion-item {
-  // background-color: var(--token-color-nomad-gradient-primary-start);
   background: linear-gradient(-45deg,
       var(--token-color-packer-gradient-primary-start),
       var(--token-color-nomad-gradient-primary-start));
