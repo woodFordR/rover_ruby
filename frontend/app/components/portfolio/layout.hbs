@@ -5,7 +5,7 @@
   {{#each @projects.portfolioData as |p|}}
     <LG.Item @tag="div">
       <Portfolio::ProjectCard
-        @code={{p.code}}
+        @code={{p.codeSnippet}}
         @codeDescription={{p.codeDescription}}
         @deployLink={{p.deployLink}}
         @description={{p.description}}
