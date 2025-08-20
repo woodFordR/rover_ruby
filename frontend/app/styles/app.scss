@@ -32,10 +32,15 @@
   }
 }
 
+hr {
+  border: solid !important;
+  margin: 1.5rem !important;
+  border-color: #F0DB7D !important;
+}
 
 .hds-page-header {
 
-  margin-left: 2.5rem;
+  margin-left: 3.5rem;
 
   a {
     text-decoration: none !important;
@@ -44,6 +49,11 @@
   div.hds-layout-grid-item>a>span {
     font-weight: bolder;
     color: #3b3d45;
+  }
+
+  nav {
+    justify-items: right;
+    margin-right: 3.5rem;
   }
 
   .hds-badge {
