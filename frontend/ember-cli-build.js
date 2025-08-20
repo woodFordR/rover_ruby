@@ -2,7 +2,7 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-module.exports = function (defaults) {
+module.exports = function(defaults) {
   const app = new EmberApp(defaults, {
     sassOptions: {
       precision: 4,
@@ -15,6 +15,7 @@ module.exports = function (defaults) {
   });
   app.import(
     'node_modules/@hashicorp/design-system-components/dist/styles/@hashicorp/design-system-components.css',
+    'node_modules/swiper/swiper-bundle.css',
   );
 
   return app.toTree();

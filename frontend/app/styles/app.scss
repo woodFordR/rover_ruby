@@ -1,5 +1,10 @@
 @import "@hashicorp/design-system-components";
 
+.swiper {
+  width: 38rem;
+  height: 20rem;
+}
+
 #hds-main {
   padding: 5em 5em 2em 5em;
   overflow: scroll !important;
