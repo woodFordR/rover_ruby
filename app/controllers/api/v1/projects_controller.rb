@@ -45,7 +45,8 @@ class Api::V1::ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(
         :avatar, :description, :owner, :title, :logo,
-        :code_description, :code_link, :code_snippet
+        :code_description, :code_link, :code_snippet,
+        :code_language
       )
     end
 end

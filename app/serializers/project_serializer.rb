@@ -9,7 +9,8 @@ class ProjectSerializer < ApplicationSerializer
       "description": obj.description,
       "logo": obj.logo,
       "owner": obj.owner,
-      "title": obj.title
+      "title": obj.title,
+      "code_language": obj.code_language
     }
   end
   attribute :id do |obj|

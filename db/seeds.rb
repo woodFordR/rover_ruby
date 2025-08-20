@@ -8,8 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
-
 [
   {
     code_snippet: "def grab_links(uri)\n" +
@@ -114,31 +112,40 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
     owner: "woodFordR",
     title: "cookbook",
     language: "ruby",
-  }
+  },
 ].each do |project|
-  Project.create(project)
+  Project.create({
+    :code_description => project[:code_description],
+    :code_link => project[:code_link],
+    :deploy_link => project[:deploy_link],
+    :description => project[:description],
+    :logo => project[:logo],
+    :owner => project[:owner],
+    :title => project[:title],
+    :code_language => project[:language]
+  })
 end
 
-[
-  {
-    first_name: "Jimmy",
-    last_name: "Jokes",
-    username: "knockKnock",
-    email: "adam@woodford.life",
-  },
-  {
-    first_name: "Tony",
-    last_name: "Pepperoni",
-    username: "hitOrMiss",
-    email: "test@woodford.life",
-  },
-  {
-    first_name: "Donny",
-    last_name: "Dimes",
-    username: "heyyyyyyyAllRight",
-    email: "dev@woodford.life",
-  },
-].each do |user|
-  User.create(user)
-end
+# [
+#   {
+#     first_name: "Jimmy",
+#     last_name: "Jokes",
+#     username: "knockKnock",
+#     email: "adam@woodford.life",
+#   },
+#   {
+#     first_name: "Tony",
+#     last_name: "Pepperoni",
+#     username: "hitOrMiss",
+#     email: "test@woodford.life",
+#   },
+#   {
+#     first_name: "Donny",
+#     last_name: "Dimes",
+#     username: "heyyyyyyyAllRight",
+#     email: "dev@woodford.life",
+#   },
+# ].each do |user|
+#   User.create(user)
+# end
 

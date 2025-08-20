@@ -22,7 +22,7 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
-    
+
 # Copy application code
 COPY . .
 
@@ -38,9 +38,9 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y curl build-essential git libvips postgresql-client && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 RUN curl -sL https://deb.nodesource.com/setup_current.x | bash - &&\
-        apt-get update && \
-        apt-get install --yes --no-install-recommends nodejs &&\
-        npm install -g yarn
+    apt-get update && \
+    apt-get install --yes --no-install-recommends nodejs &&\
+    npm install -g yarn
 
 # Copy built artifacts: gems, application
 COPY --from=build /usr/local/bundle /usr/local/bundle
