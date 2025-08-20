@@ -18,7 +18,7 @@
 }
 
 #hds-main {
-  padding: 5em 5em 2em 5em;
+  padding: 5em 15em 2em;
   overflow: scroll !important;
   flex: column !important
 }
@@ -78,8 +78,6 @@ hr {
 
   nav>ol>li {
     div {
-      border-radius: 0.32rem;
-
       span {
         font-size: xx-large !important;
         padding: 0.50rem !important;
@@ -89,11 +87,6 @@ hr {
     a>span {
       padding: 0.5rem;
     }
-
-    //   a,
-    //   div,
-    //   a>span {}
-    // }
 
     li.hds-breadcrumb__item,
     li.hds-breadcrumb__list {
