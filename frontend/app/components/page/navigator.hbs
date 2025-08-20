@@ -1,0 +1,64 @@
+<Hds::PageHeader
+  as |PH|
+>
+  <PH.Title>{{@page.title}}</PH.Title>
+  <PH.Breadcrumb>
+    <Hds::Breadcrumb>
+      <Hds::Breadcrumb::Item @text="threading" />
+      <Hds::Breadcrumb::Item @text="Thread" />
+      <Hds::Breadcrumb::Item @text="target=request_worker" />
+      <Hds::Breadcrumb::Item @text="args=(connection, portfolio)" />
+      <Hds::Breadcrumb::Item @text="start()" @current={{true}} />
+    </Hds::Breadcrumb>
+  </PH.Breadcrumb>
+  <PH.IconTile @icon="database" @color="neutral" />
+  <PH.Badges>
+    <Hds::Badge
+      @text="in-progress"
+      @icon="award"
+      @color="success"
+      @type="inverted"
+    />
+  </PH.Badges>
+  <PH.Subtitle><strong>{{@page.subtitle}}</strong></PH.Subtitle>
+  <PH.Description><strong>{{@page.description}}</strong></PH.Description>
+  <PH.Generic>
+    <Hds::Layout::Grid @columnMinWidth="100%" @gap="16" as |LG|>
+      <Hds::Layout::Flex @align="start" @gap="16">
+        <LG.Item>
+          <Hds::Link::Standalone
+            @color="secondary"
+            @iconPosition="trailing"
+            @isHrefExternal={{true}}
+            @icon="collections"
+            @text="Docs"
+            @size="medium"
+            @href="https://www.notion.com/"
+          />
+        </LG.Item>
+        <LG.Item>
+          <Hds::Link::Standalone
+            @color="secondary"
+            @iconPosition="trailing"
+            @isHrefExternal={{true}}
+            @icon="terminal-screen"
+            @text="Textual"
+            @size="medium"
+            @href="https://textual.textualize.io/"
+          />
+        </LG.Item>
+        <LG.Item>
+          <Hds::Link::Standalone
+            @color="secondary"
+            @iconPosition="trailing"
+            @isHrefExternal={{true}}
+            @icon="rocket"
+            @text="Firecracker"
+            @size="medium"
+            @href="https://firecracker-microvm.github.io/"
+          />
+        </LG.Item>
+      </Hds::Layout::Flex>
+    </Hds::Layout::Grid>
+  </PH.Generic>
+</Hds::PageHeader>

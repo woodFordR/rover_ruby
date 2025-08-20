@@ -1,0 +1,18 @@
+<Hds::Layout::Grid
+  @columnMinWidth="50%"
+  @gap="32" as |LG|
+>
+  {{#each @projects.portfolioData as |p|}}
+    <LG.Item @tag="div">
+      <Portfolio::ProjectCard
+        @code={{p.code}}
+        @codeDescription={{p.codeDescription}}
+        @deployLink={{p.deployLink}}
+        @description={{p.description}}
+        @language="javascript"
+        @logo={{p.logo}}
+        @title={{p.title}}
+      />
+    </LG.Item>
+  {{/each}}
+</Hds::Layout::Grid>
