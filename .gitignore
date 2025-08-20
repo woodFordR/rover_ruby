@@ -32,8 +32,7 @@
 
 # Ignore master key for decrypting credentials and more.
 config/master.key
-config/credentials/production.key
-config/credentials/development*
+config/credentials/*.key
 config/.DS_Store
 .DS_Store*
 # compiled output
