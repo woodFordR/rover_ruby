@@ -4,7 +4,7 @@ export default class Project extends Model {
   @attr('string') avatarPath;
   @attr('string') codeDescription;
   @attr('string') codeLink;
-  @attr('string') codeSnippet;
+  @attr('bytes') codeSnippet;
   @attr('string') deployLink;
   @attr('string') description;
   @attr('string') logo;
