@@ -18,6 +18,42 @@
 :root {
   --token-color-focus-action-internal: #3b3d45 !important;
   --token-color-focus-action-external: #8c909c !important;
+  --token-color-foreground-faint: #3b3d45 !important;
+  --token-color-surface-strong: transparent !important;
+  --token-color-foreground-success-on-surface: transparent !important;
+}
+
+.hds-page-header {
+
+  a {
+    text-decoration: none !important;
+  }
+
+  div.hds-layout-grid-item>a>span {
+    font-weight: bolder;
+    color: var(--token-color-foreground-faint);
+  }
+
+  .hds-badge {
+    background-color: #3b3d45 !important;
+    color: #6BACE4 !important;
+    border: #6BACE4 !important;
+  }
+
+  .hds-icon-tile {
+    background-color: #3b3d45 !important;
+    color: #6BACE4 !important;
+  }
+
+  nav>ol>li::after {
+    color: #3b3d45 !important;
+  }
+
+  nav>ol>li>div,
+  nav>ol>li>a {
+    background-color: #3b3d45 !important;
+    color: #6BACE4 !important;
+  }
 }
 
 aside {
@@ -221,5 +257,11 @@ footer {
 
   100% {
     transform: translateX(1);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
   }
 }
