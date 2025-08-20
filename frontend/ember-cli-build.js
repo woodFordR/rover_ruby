@@ -1,9 +1,12 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-
 module.exports = function(defaults) {
-  const app = new EmberApp(defaults, {
+  var app = new EmberApp(defaults, {
+    // fingerprint: {
+    //   // matches the `/` mount point
+    //   prepend: 'http://localhost:3000/',
+    // },
     sassOptions: {
       precision: 4,
       includePaths: [

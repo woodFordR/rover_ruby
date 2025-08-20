@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   get "bird", to: "bird#show"
   mount_ember_app :frontend, to: "/"
+  mount_ember_assets :frontend, to: "/"
 end
