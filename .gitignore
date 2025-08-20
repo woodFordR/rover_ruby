@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+/bruno
 
 # Ignore all environment files (except templates).
 /.env*
@@ -30,14 +31,20 @@
 !/tmp/storage/.keep
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+config/master.key
+config/credentials/production.key
+config/credentials/development*
+config/.DS_Store
+.DS_Store*
 # compiled output
 /dist/
 /declarations/
 
-/bruno
 
-/config/credentials/production.key
 
 node_modules/
 node_modules/*
+
+public/images/*
+
+

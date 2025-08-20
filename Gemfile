@@ -3,6 +3,7 @@ source "https://rubygems.org"
 ruby "3.4.5"
 
 gem "alba"
+gem 'aws-sdk', '~> 3.3'
 gem "benchmark"
 gem "bootsnap", require: false
 gem "ember-cli-rails"
