@@ -47,7 +47,18 @@
     </Hds::Card::Container>
   </LG.Item>
   <LG.Item @colspan={{2}} @style={{"align-items: center"}}>
-    <Swiper::Carousel />
+    <Swiper::Carousel
+      @className="index-page-gallery"
+      @images={{array
+        (hash src="/assets/images/capybara-capemay-zoo.png" alt="a capybara at  CapeMay Zoo")
+        (hash src="/assets/images/daughter-me-capemay-zoo-woods.png" alt="myself & daughter at CapeMay Zoo")
+        (hash src="/assets/images/daughter-me-dock-bay.png" alt="myself & daughter at the dock / bay")
+        (hash src="/assets/images/daughter-water-sports.png" alt="my daughter playing by the pool")
+        (hash src="/assets/images/master-bedroom-emerald-paint.png" alt="new emerald green painted room part 1")
+        (hash src="/assets/images/master-bedroom-emerald-paint2.png" alt="new emerald green painted room part 2")
+        (hash src="/assets/images/master-bedroom-emerald-paint3.png" alt="new emerald green painted room part 3")
+      }}
+    />
     <Hds::Separator />
     <Hds::Link::Standalone
       @icon="arrow-right"
