@@ -8,7 +8,10 @@ export default class Project extends Model {
   @attr('string') deployLink;
   @attr('string') description;
   @attr('string') logo;
+  @attr('string') projectId;
+  @attr('string') type;
   @attr('string') owner;
   @attr('string') title;
   @attr('string') codeLanguage;
 }
+

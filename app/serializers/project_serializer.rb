@@ -1,4 +1,10 @@
 class ProjectSerializer < ApplicationSerializer
+  attribute :id do |obj|
+    "#{obj.id}"
+  end
+  attribute :type do
+    "Project"
+  end
   attribute :attributes do |obj|
     {
       "avatarPath": obj.avatar_path,
@@ -10,13 +16,8 @@ class ProjectSerializer < ApplicationSerializer
       "logo": obj.logo,
       "owner": obj.owner,
       "title": obj.title,
-      "code_language": obj.code_language
+      "codeLanguage": obj.code_language,
+      "projectId": obj.id.to_s,
     }
-  end
-  attribute :id do |obj|
-    "#{obj.id}"
-  end
-  attribute :type do
-    "project"
   end
 end
