@@ -3,6 +3,12 @@ import 'swiper/css';
 import { Navigation, Pagination } from 'swiper/modules';
 
 const swiper = new Swiper('.swiper', {
+  on: {
+    init: function() {
+      console.log('swiper initialized');
+    },
+  },
+
   modules: [Navigation, Pagination],
   direction: 'vertical',
   loop: true,
@@ -39,4 +45,8 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
+// const swiper = document.querySelector('.swiper').swiper;
+
+// Now you can use all slider methods like
+// swiper.slideNext();
 
