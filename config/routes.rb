@@ -4,7 +4,9 @@ Rails.application.routes.draw do
       resources :projects
     end
   end
+
   get "bird", to: "bird#show"
+
   mount_ember_app :frontend, to: "/"
   mount_ember_assets :frontend, to: "/"
 end

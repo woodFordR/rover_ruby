@@ -25,6 +25,7 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
     logo: "packer",
     owner: "woodFordR",
     title: "emberman",
+    language: "ruby",
   },
   {
     code_snippet: "async function fetchAllPosts() {\n" +
@@ -40,7 +41,8 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
     description: "A blogging application built with ruby on rails and reactjs.",
     logo: "waypoint",
     owner: "woodFordR",
-    title: "rr-blog"
+    title: "rr-blog",
+    language: "javascript",
   },
   {
     code_snippet: "import Component from '@glimmer/component';\n\n" +
@@ -59,7 +61,8 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
     description: "An emberjs application.",
     logo: "vault",
     owner: "woodFordR",
-    title: "superRentals"
+    title: "superRentals",
+    language: "javascript",
   },
   {
     code_description: "In this blogging application, I have a snippet " +
@@ -77,7 +80,8 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
     description: "A blog built with ruby and jekyll.rb",
     logo: "terraform",
     owner: "https://github.com/woodFordR/blog",
-    title: "Woodford's Den"
+    title: "Woodford's Den",
+    language: "javascript",
   },
   {
     code_snippet:
@@ -108,8 +112,33 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint']
     description: "A refreshing hanami app built with ruby.",
     logo: "nomad",
     owner: "woodFordR",
-    title: "cookbook"
+    title: "cookbook",
+    language: "ruby",
   }
 ].each do |project|
   Project.create(project)
 end
+
+[
+  {
+    first_name: "Jimmy",
+    last_name: "Jokes",
+    username: "knockKnock",
+    email: "adam@woodford.life",
+  },
+  {
+    first_name: "Tony",
+    last_name: "Pepperoni",
+    username: "hitOrMiss",
+    email: "test@woodford.life",
+  },
+  {
+    first_name: "Donny",
+    last_name: "Dimes",
+    username: "heyyyyyyyAllRight",
+    email: "dev@woodford.life",
+  },
+].each do |user|
+  User.create(user)
+end
+
