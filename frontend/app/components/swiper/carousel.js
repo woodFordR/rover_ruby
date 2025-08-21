@@ -11,7 +11,7 @@ export default class CarouselComponent extends Component {
     this.swiperInstance = new Swiper(element.querySelector('.swiper'), {
       loop: true,
       slidesPerView: 1,
-      spaceBetween: 10,
+      spaceBetween: 30,
       autoplay: {
         delay: 3000,
         disableOnInteraction: false,
