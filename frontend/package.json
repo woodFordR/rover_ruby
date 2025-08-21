@@ -83,6 +83,7 @@
     "@hashicorp/ember-flight-icons": "^5.0.1",
     "ember-cli-rails-addon": "^0.12.0",
     "git": "^0.1.5",
+    "moment": "^2.30.1",
     "swiper": "^11.2.10"
   }
 }

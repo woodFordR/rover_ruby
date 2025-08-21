@@ -30,18 +30,15 @@ class Api::V1::ProjectsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1
   def destroy
     @post.destroy!
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
     end
 
-    # allow a list of trusted parameters through.
     def project_params
       params.require(:project).permit(
         :avatar, :description, :owner, :title, :logo,
