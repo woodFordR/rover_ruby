@@ -9,7 +9,11 @@
   <Hds::Layout::Grid @columnMinWidth="100%" @gap="16" as |LG|>
     <LG.Item>
       <Hds::Layout::Flex @align="start" @gap="16" @wrap={{false}}>
-        <Hds::IconTile @logo={{@logo}} @size="large" />
+        {{#if @avatar}}
+          <img src={{@avatar}} />
+        {{else}}
+          <Hds::IconTile @logo={{@logo}} @size="large" />
+        {{/if}}
         <Hds::Layout::Flex @direction="column" @gap="8">
           <Hds::Text::Display @tag="h3" @size="400">
             {{@title}}

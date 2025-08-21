@@ -53,6 +53,14 @@ end
 # avatar.attach(io: File.open("{Dir.pwd}/public/images/#{avatar_file}"),
 #   filename: avatar_file,content_type: 'image/jpg')
 
+
+# @user.resume.attach(
+#   io: File.open('/path/to/file'),
+#   filename: 'file.pdf',
+#   content_type: 'application/pdf',
+#   identify: false
+# )
+
 #
 # [
 #   {

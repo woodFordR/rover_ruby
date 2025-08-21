@@ -1,7 +1,7 @@
 import Model, { attr } from '@ember-data/model';
 
 export default class Project extends Model {
-  @attr('text') avatarPath;
+  @attr('text') avatar;
   @attr('text') codeLink;
   @attr('text') codeSnippet;
   @attr('text') deployLink;

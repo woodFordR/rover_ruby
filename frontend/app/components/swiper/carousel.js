@@ -13,7 +13,7 @@ export default class CarouselComponent extends Component {
       slidesPerView: 1,
       spaceBetween: 30,
       autoplay: {
-        delay: 3000,
+        delay: 6000,
         disableOnInteraction: false,
       },
       navigation: {

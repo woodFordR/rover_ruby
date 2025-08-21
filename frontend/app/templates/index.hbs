@@ -1,5 +1,5 @@
 <Hds::PageHeader as |PH|>
-  <PH.Title>Adam Kaewell's Ocean, Jump In</PH.Title>
+  <PH.Title>Adam Kaewell</PH.Title>
   <PH.Badges>
     <Hds::Badge @text="Welcome Welcome Welcome" @icon="database" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
   </PH.Badges>
@@ -20,7 +20,7 @@
             @icon="check-circle"
           />
           <Hds::Text::Body @tag="p">
-            Here are some photos from my recent trip to the Jersey shore.
+            Here are some photos from my painting.
           </Hds::Text::Body>
         </LF.Item>
       </Hds::Layout::Flex>
@@ -30,7 +30,7 @@
     <Hds::Card::Container @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
       <Hds::Layout::Flex @align="center" @gap="16" as |LF|>
         <LF.Item>
-          <Hds::IconTile @icon="" @size="medium" />
+          <Hds::IconTile @icon="file-check" @size="medium" />
           <Hds::Text::Display @tag="h2" @size="300">
             Resume - August 2025
           </Hds::Text::Display>
@@ -50,22 +50,12 @@
     <Swiper::Carousel
       @className="index-page-gallery"
       @images={{array
-        (hash src="/assets/images/capybara-capemay-zoo.png" alt="a capybara at  CapeMay Zoo")
-        (hash src="/assets/images/daughter-me-capemay-zoo-woods.png" alt="myself & daughter at CapeMay Zoo")
-        (hash src="/assets/images/daughter-me-dock-bay.png" alt="myself & daughter at the dock / bay")
-        (hash src="/assets/images/daughter-water-sports.png" alt="my daughter playing by the pool")
         (hash src="/assets/images/master-bedroom-emerald-paint.png" alt="new emerald green painted room part 1")
         (hash src="/assets/images/master-bedroom-emerald-paint2.png" alt="new emerald green painted room part 2")
         (hash src="/assets/images/master-bedroom-emerald-paint3.png" alt="new emerald green painted room part 3")
       }}
     />
     <Hds::Separator />
-    <Hds::Link::Standalone
-      @icon="arrow-right"
-      @iconPosition="trailing"
-      @text="View more photos"
-      @href="#"
-    />
   </LG.Item>
   <Hds::Card::Container @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
     <Hds::Text::Display @tag="h2" @size="400">Card</Hds::Text::Display>
