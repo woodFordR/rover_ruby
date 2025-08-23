@@ -1,9 +1,10 @@
-<Hds::PageHeader as |PH|>
-  <PH.Title>Adam Kaewell</PH.Title>
-  <PH.Badges>
-    <Hds::Badge @text="Welcome Welcome Welcome" @icon="database" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
-  </PH.Badges>
-</Hds::PageHeader>
+<Page::Navigator
+  @page={{hash
+    title="Adam Kaewell"
+    subtitle="Welcome Welcome Welcome"
+    description="This is my ocean, jump in."
+  }}
+/>
 <Hds::Separator />
 <Hds::Layout::Grid @columnMinWidth="50%" @gap="32" as |LG|>
   <LG.Item>
