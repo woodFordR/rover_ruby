@@ -59,10 +59,6 @@ hr {
 
   margin-left: 3.5rem;
 
-  a {
-    text-decoration: none !important;
-  }
-
   div.hds-layout-grid-item>a>span {
     font-weight: bolder;
     color: #3b3d45;
@@ -84,87 +80,55 @@ hr {
     color: #6BACE4 !important;
   }
 
-  nav>ol>li::after {
+  .hds-breadcrumb__list>.hds-breadcrumb__item:not(:last-child)::after {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #3b3d45 !important;
     padding: 0 .65rem !important;
     content: "~" !important;
     font-size: xx-large;
     font-weight: 900;
+    content: "~" !important;
+    display: inline-block !important;
+    animation: birds 2.0s linear infinite !important;
   }
 
   nav>ol>li {
-    div {
-      span {
-        font-size: xx-large !important;
-        padding: 0.50rem !important;
-      }
-    }
 
-    a>span {
-      padding: 0.5rem;
-    }
-
-    li.hds-breadcrumb__item,
-    li.hds-breadcrumb__list {
+    span {
+      text-decoration: none !important;
       background-color: transparent !important;
       color: #3b3d45 !important;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
       font-size: xx-large !important;
       font-weight: 900 !important;
       padding: 0 0.65rem !important;
-      display: flex;
-      justify-content: center;
       height: 2rem;
       margin: 0;
+
+      display: inline-block !important;
+      animation: birds 1.5s linear infinite !important;
     }
+  }
 
-    a>span.hds-breadcrumb__text,
-    div.hds-breadcrumb__item {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
-      font-size: xx-large !important;
-      font-weight: 900 !important;
-      padding: 0 0.65rem !important;
 
-      display: inline-block;
-      animation: birds 3.5s linear infinite;
-    }
+  li:nth-child(1) {
+    animation-delay: 0.25s;
+  }
 
-    a>span.hds-breadcrumb__text:nth-child(1),
-    div.hds-breadcrumb__item:nth-child(1) {
-      animation-delay: 0s;
-    }
+  li:nth-child(2) {
+    animation-delay: 0.5s;
+  }
 
-    a>span.hds-breadcrumb__text:nth-child(2),
-    div.hds-breadcrumb__item:nth-child(2) {
-      animation-delay: 0.4s;
-    }
+  li:nth-child(3) {
+    animation-delay: 0.75s;
+  }
 
-    a>span.hds-breadcrumb__text:nth-child(3),
-    div.hds-breadcrumb__item:nth-child(3) {
-      animation-delay: 0.8s;
-    }
+  li:nth-child(4) {
+    animation-delay: 1.0s;
+  }
 
-    a>span.hds-breadcrumb__text:nth-child(4),
-    div.hds-breadcrumb__item:nth-child(4) {
-      animation-delay: 1.2s;
-    }
-
-    a>span.hds-breadcrumb__text:nth-child(5),
-    div.hds-breadcrumb__item:nth-child(5) {
-      animation-delay: 1.6s;
-    }
-
-    a>span.hds-breadcrumb__text:nth-child(6),
-    div.hds-breadcrumb__item:nth-child(6) {
-      animation-delay: 2.0s;
-    }
-
-    a>span.hds-breadcrumb__text:nth-child(7),
-    div.hds-breadcrumb__item:nth-child(7) {
-      animation-delay: 2.4s;
-    }
-
+  li:nth-child(5) {
+    animation-delay: 1.25s;
   }
 }
 
