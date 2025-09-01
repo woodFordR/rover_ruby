@@ -41,6 +41,7 @@ config/.DS_Store
 
 frontend/public/assets/images/*
 frontend/public/*
+frontend/.watchman-cookie*
 
 
 node_modules/
