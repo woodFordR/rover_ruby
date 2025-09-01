@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_08_20_152317) do
+ActiveRecord::Schema[7.1].define(version: 2025_09_01_165405) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_20_152317) do
     t.string "deploy_link"
     t.text "code_snippet"
     t.string "code_language"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -76,4 +78,5 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_20_152317) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "projects", "users"
 end
