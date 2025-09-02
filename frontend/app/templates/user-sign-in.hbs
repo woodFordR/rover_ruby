@@ -1,0 +1,27 @@
+<Hds::Form as |HF|>
+  <HF.Section>
+    <Hds::Alert @type="inline" @color="critical" as |HA|>
+      <HA.Title @tag="h2">Form Submission Error</HA.Title>
+      <HA.Description>Please Correct: </HA.Description>
+      <HA.Description>
+        <Hds::Link::Inline @href="#" @color="secondary">Username</Hds::Link::Inline>
+      </HA.Description>
+    </Hds::Alert>
+  </HF.Section>
+  <HF.Separator />
+  <HF.Section>
+    <Hds::Form::TextInput::Field name="username-field" as |FF|>
+      <FF.Label>Username</FF.Label>
+    </Hds::Form::TextInput::Field>
+    <Hds::Form::TextInput::Field name="password-field" as |FF|>
+      <FF.Label>Password</FF.Label>
+    </Hds::Form::TextInput::Field>
+  </HF.Section>
+  <HF.Separator />
+  <HF.Footer as |Footer|>
+    <Footer.ButtonSet>
+      <Hds::Button @text="Sign In" @type="submit" />
+      <Hds::Button @text="Cancel" @color="secondary" />
+    </Footer.ButtonSet>
+  </HF.Footer>
+</Hds::Form>

@@ -11,4 +11,6 @@ Router.map(function() {
   this.route('contact');
   this.route('portfolio');
   this.route('user-create', { path: 'newbie' });
+  this.route('user-sign-in', { path: 'login' });
+  this.route('password', { path: 'pwd-change' });
 });
