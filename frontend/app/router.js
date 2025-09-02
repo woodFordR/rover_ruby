@@ -10,5 +10,5 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('portfolio');
-  this.route('user');
+  this.route('user-create', { path: 'newbie' });
 });
