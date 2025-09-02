@@ -10,11 +10,18 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('portfolio');
-  this.route('user-create', { path: 'newbie' });
-  this.route('user-sign-in', { path: 'login' });
-  this.route('password', { path: 'change' });
-  this.route('user', { path: '/:username' }, function() {
-    this.route('projects');
-    this.route('project', { path: '/projects/:project_id' });
-  })
+  this.route('users', function() {
+    this.route('new', { path: 'newbie' });
+    this.route('edit'), { path: '/:user_id' };
+    this.route('show'), { path: '/:username' };
+    this.route('user', { path: '/:user_id' }, function() {
+      this.route('password', { path: '/password/edit' });
+      this.route('projects');
+      this.route('project', { path: '/projects/:project_id' });
+    });
+  });
+  this.route('sessions', function() {
+    this.route('new', { path: 'login' });
+  });
 });
+
