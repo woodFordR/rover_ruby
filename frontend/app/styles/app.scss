@@ -12,6 +12,64 @@
   --token-color-foreground-success-on-surface: transparent !important;
 }
 
+header {
+  margin: 1.5rem 3.5rem 0 5.5rem;
+
+  .hds-breadcrumb__list>.hds-breadcrumb__item:not(:last-child)::after {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #3b3d45 !important;
+    padding: 0 .65rem !important;
+    content: "~" !important;
+    font-size: xx-large;
+    font-weight: 900;
+    content: "~" !important;
+    display: inline-block !important;
+    animation: birds 2.0s linear infinite !important;
+  }
+
+  nav {
+    justify-items: right;
+
+    >ol>li {
+
+      span {
+        text-decoration: none !important;
+        background-color: transparent !important;
+        color: #3b3d45 !important;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+        font-size: xx-large !important;
+        font-weight: 900 !important;
+        padding: 0 0.65rem !important;
+        height: 2rem;
+        margin: 0;
+
+        display: inline-block !important;
+        animation: birds 1.5s linear infinite !important;
+      }
+    }
+
+    li:nth-child(1) {
+      animation-delay: 0.25s;
+    }
+
+    li:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    li:nth-child(3) {
+      animation-delay: 0.75s;
+    }
+
+    li:nth-child(4) {
+      animation-delay: 1.0s;
+    }
+
+    li:nth-child(5) {
+      animation-delay: 1.25s;
+    }
+  }
+}
+
 .swiper-container {
   width: 100%;
   margin: 0;
@@ -80,56 +138,6 @@ hr {
     color: #6BACE4 !important;
   }
 
-  .hds-breadcrumb__list>.hds-breadcrumb__item:not(:last-child)::after {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #3b3d45 !important;
-    padding: 0 .65rem !important;
-    content: "~" !important;
-    font-size: xx-large;
-    font-weight: 900;
-    content: "~" !important;
-    display: inline-block !important;
-    animation: birds 2.0s linear infinite !important;
-  }
-
-  nav>ol>li {
-
-    span {
-      text-decoration: none !important;
-      background-color: transparent !important;
-      color: #3b3d45 !important;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
-      font-size: xx-large !important;
-      font-weight: 900 !important;
-      padding: 0 0.65rem !important;
-      height: 2rem;
-      margin: 0;
-
-      display: inline-block !important;
-      animation: birds 1.5s linear infinite !important;
-    }
-  }
-
-
-  li:nth-child(1) {
-    animation-delay: 0.25s;
-  }
-
-  li:nth-child(2) {
-    animation-delay: 0.5s;
-  }
-
-  li:nth-child(3) {
-    animation-delay: 0.75s;
-  }
-
-  li:nth-child(4) {
-    animation-delay: 1.0s;
-  }
-
-  li:nth-child(5) {
-    animation-delay: 1.25s;
-  }
 }
 
 aside {

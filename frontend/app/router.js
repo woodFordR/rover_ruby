@@ -12,5 +12,9 @@ Router.map(function() {
   this.route('portfolio');
   this.route('user-create', { path: 'newbie' });
   this.route('user-sign-in', { path: 'login' });
-  this.route('password', { path: 'pwd-change' });
+  this.route('password', { path: 'change' });
+  this.route('user', { path: '/:username' }, function() {
+    this.route('projects');
+    this.route('project', { path: '/projects/:project_id' });
+  })
 });
