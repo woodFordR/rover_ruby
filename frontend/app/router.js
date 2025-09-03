@@ -12,10 +12,10 @@ Router.map(function() {
   this.route('portfolio');
   this.route('users', function() {
     this.route('new', { path: 'newbie' });
-    this.route('edit'), { path: '/:user_id' };
-    this.route('show'), { path: '/:username' };
+    // this.route('edit'), { path: '/:user_id' };
+    // this.route('show'), { path: '/:username' };
     this.route('user', { path: '/:user_id' }, function() {
-      this.route('password', { path: '/password/edit' });
+      // this.route('password', { path: '/password/edit' });
       this.route('projects');
       this.route('project', function() {
         this.route('new');
