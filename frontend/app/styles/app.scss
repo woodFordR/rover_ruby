@@ -13,7 +13,6 @@
 }
 
 header {
-  margin: 1.5rem 3.5rem 0 5.5rem;
 
   .hds-breadcrumb__list>.hds-breadcrumb__item:not(:last-child)::after {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -141,7 +140,7 @@ hr {
 }
 
 aside {
-  padding-left: 2rem;
+  justify-items: right;
 
   a {
     color: inherit !important;
@@ -187,7 +186,6 @@ html {
 body {
   height: 100%;
   overflow-y: auto;
-  padding-top: 1em;
   justify-content: center;
   margin: auto;
   background: linear-gradient(315deg,
