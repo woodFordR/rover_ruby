@@ -7,7 +7,7 @@ class ProjectSerializer < ApplicationSerializer
   end
   attribute :attributes do |obj|
     {
-      "avatar": obj.avatar.variant(:thumb).processed.url,
+      # "avatar": obj.avatar.variant(:thumb).processed.url,
       "codeDescription": obj.code_description,
       "codeLink": obj.code_link,
       "codeSnippet": obj.code_snippet,
@@ -18,6 +18,7 @@ class ProjectSerializer < ApplicationSerializer
       "title": obj.title,
       "codeLanguage": obj.code_language,
       "projectId": obj.id.to_s,
+      "userId": obj.user_id.to_s,
     }
   end
 end

@@ -17,7 +17,13 @@ Router.map(function() {
     this.route('user', { path: '/:user_id' }, function() {
       this.route('password', { path: '/password/edit' });
       this.route('projects');
-      this.route('project', { path: '/projects/:project_id' });
+      this.route('project', function() {
+        this.route('new');
+      });
+      this.route('photos');
+      this.route('photo', function() {
+        this.route('new');
+      });
     });
   });
   this.route('sessions', function() {

@@ -1,6 +1,6 @@
 class Api::V1::ProjectsController < ApplicationController
-  before_action :require_login
-  before_action :set_project, only: %i[ show update destroy ]
+  # before_action :require_login
+  # before_action :set_project, only: %i[ show update destroy ]
 
   def index
     @projects = Project.order(created_at: :desc)

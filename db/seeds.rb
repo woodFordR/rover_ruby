@@ -1,5 +1,22 @@
 require 'uri'
 
+seed_user = {
+  first_name: "Adam",
+  last_name: "Kaewell",
+  username: "akaewell",
+  email: "adam@kaewell.com",
+  password: "abcd1234"
+}
+
+user = User.create({
+  first_name: seed_user[:first_name],
+  last_name: seed_user[:last_name],
+  username: seed_user[:username],
+  email: seed_user[:email],
+  password: seed_user[:password]
+})
+user.save!
+
 [
  {
     code_snippet: "import Component from \'\@glimmer/component\'\;\n\nexport default class RentalsFilterComponent extends Component \{\n\tget results\(\) \{\n\t\tlet \{ rentals\, query \} \= this.args\;\n\t\tif\(query\) \{\n\t\t\trentals \= rentals.filter\(\(rental\) \=\> rental\.title.includes\(query\)\)\;\n\t\t\}\n\treturn rentals\;\n\t\}\n\}\n",
@@ -11,6 +28,7 @@ require 'uri'
     owner: "woodFordR",
     title: "superRentals",
     code_language: "javascript",
+    user_id: user.id
   },
   {
     code_snippet: "class Show \< Cookbook\:\:View\n\texpose \:recipes do\n\t\t\[\n\t\t\t\{\n\t\t\t\tname\: \"Cinnamon Rolls\",\n\t\t\t\tdescription\: \"Big, fluffy\"\n\t\t\}\n\t\t\]\n\tend\nend\n", 
@@ -22,6 +40,7 @@ require 'uri'
     owner: "woodFordR",
     title: "cookbook",
     code_language: "ruby",
+    user_id: user.id
   },
   {
     code_snippet: "def grab_links\(uri\)\n\timage_urls \= URI.open\(uri\) do \|f\|\n\t\tf.read.scan\(\/.\*\?\<link.\*\?as\=\"image\" href\=\(\".\*\?\").\*\?\/m\)\n\tend\n\timage_urls.map \{ \|f\| \/.*\(https.*\.png\)\.\*\/\.match\(f\[0\]\)\[1\] \}\nend\n",
@@ -33,6 +52,7 @@ require 'uri'
     owner: "woodFordR",
     title: "emberman",
     code_language: "ruby",
+    user_id: user.id
   },
   {
     code_snippet: "async function fetchAllPosts() \{\n\tconst response \= await fetch(\`\$\{API_URL\}\`\);\n\tif (!response.ok) {\n\t\tthrow new Error(response.statusText);\n\t}\n\treturn response.json();\n}\n",
@@ -44,6 +64,7 @@ require 'uri'
     owner: "woodFordR",
     title: "rr-blog",
     code_language: "javascript",
+    user_id: user.id
   }
 ].each do |item|
   puts item
