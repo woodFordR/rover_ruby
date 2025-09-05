@@ -1,0 +1,25 @@
+<div class="header-card">
+  <Hds::Card::Container
+    @level="mid"
+    @levelHover="high"
+    @levelActive="mid"
+    @hasBorder={{true}}
+  >
+    <Hds::Layout::Grid @columnMinWidth="100%" @gap="16" as |LG|>
+      <Hds::Layout::Flex @align="start" @gap="16">
+        <LG.Item>
+          <Hds::Text:Display @tag="h2">The Ocean Portfolio Project: The OPP</Hds::Text:Display>
+        </LG.Item>
+        <LG.Item>
+          <Hds::Breadcrumb>
+            <Hds::Breadcrumb::Item @text="~" />
+            <Hds::Breadcrumb::Item @text="~" />
+            <Hds::Breadcrumb::Item @text="~" />
+            <Hds::Breadcrumb::Item @text="~" />
+            <Hds::Breadcrumb::Item @text="~" />
+          </Hds::Breadcrumb>
+        </LG.Item>
+      </Hds::Layout::Flex>
+    </Hds::Layout::Grid>
+  </Hds::Card::Container>
+</div>

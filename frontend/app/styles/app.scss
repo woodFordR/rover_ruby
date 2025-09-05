@@ -13,6 +13,16 @@
 }
 
 header {
+  .hds-card__container {
+    display: block;
+    padding: 0.5rem;
+    border-radius: inherit;
+
+    &:focus {
+      outline: none;
+      box-shadow: var(--token-focus-ring-action-box-shadow);
+    }
+  }
 
   .hds-breadcrumb__list>.hds-breadcrumb__item:not(:last-child)::after {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -92,12 +102,13 @@ header {
 }
 
 #hds-main {
-  padding: 5em 15em 2em;
+  padding: 4rem 10rem 2rem;
   overflow: scroll !important;
   flex: column !important
 }
 
 .portfolio-card-div {
+  padding: 2.25rem 1.75rem;
   height: 28.75rem;
 
   .hds-code-block {
@@ -201,6 +212,14 @@ body {
     overflow: hidden;
   }
 
+  .header-card {
+    padding: 1rem;
+  }
+
+  .body-data-card {
+    padding: 2.25rem 1.75rem;
+  }
+
   .hds-card__container {
     background: linear-gradient(-45deg,
         var(--token-color-packer-gradient-primary-start),
@@ -208,7 +227,6 @@ body {
     background-size: 400%;
     animation: gradient 10s ease infinite;
     display: block;
-    padding: 2.25em 1.75em;
     border-radius: inherit;
 
     &:focus,

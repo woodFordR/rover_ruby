@@ -1,24 +1,26 @@
-<Hds::Card::Container
-  @level="mid"
-  @levelHover="high"
-  @levelActive="mid"
-  @hasBorder={{true}}
-  ...attributes
->
-  <Hds::Layout::Flex @align="center" @gap="16" as |LF|>
-    <LF.Item>
-      <Hds::IconTile @icon={{@cardIcon}} @size="medium" />
-      <Hds::Text::Display @tag="h2" @size="300">
-        {{@cardTitleLink}}
-      </Hds::Text::Display>
-      <Hds::Badge
-        @text={{@cardTitleBadge}}
-        @color="success"
-        @icon="check-circle"
-      />
-      <Hds::Text::Body @tag="p">
-        {{@cardDescription}}
-      </Hds::Text::Body>
-    </LF.Item>
-  </Hds::Layout::Flex>
-</Hds::Card::Container>
+<div class="body-data-card">
+  <Hds::Card::Container
+    @level="mid"
+    @levelHover="high"
+    @levelActive="mid"
+    @hasBorder={{true}}
+    ...attributes
+  >
+    <Hds::Layout::Flex @align="center" @gap="16" as |LF|>
+      <LF.Item>
+        <Hds::IconTile @icon={{@cardIcon}} @size="medium" />
+        <Hds::Text::Display @tag="h2" @size="300">
+          {{@cardTitleLink}}
+        </Hds::Text::Display>
+        <Hds::Badge
+          @text={{@cardTitleBadge}}
+          @color="success"
+          @icon="check-circle"
+        />
+        <Hds::Text::Body @tag="p">
+          {{@cardDescription}}
+        </Hds::Text::Body>
+      </LF.Item>
+    </Hds::Layout::Flex>
+  </Hds::Card::Container>
+</div>
