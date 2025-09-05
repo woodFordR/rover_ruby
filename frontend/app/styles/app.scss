@@ -212,33 +212,53 @@ body {
     overflow: hidden;
   }
 
-  .header-card {
-    padding: 1rem;
+  .header-card-container {
+    padding-bottom: 1rem;
+
+    .hds-card__container {
+      background: linear-gradient(-45deg,
+          rgba(0, 194, 226, 1),
+          rgba(107, 172, 228, 1));
+      background-size: 400%;
+      animation: gradient 10s ease infinite;
+      display: block;
+      border-radius: inherit;
+
+      &:focus,
+      &:focus-visible {
+        box-shadow: var(--token-color-palette-green-300);
+        border-radius: round(1.5)
+      }
+    }
   }
 
-  .body-data-card {
-    padding: 2.25rem 1.75rem;
-  }
-
-  .hds-card__container {
+  .body-data-card-container {
+    padding: 0.75rem;
     background: linear-gradient(-45deg,
         var(--token-color-packer-gradient-primary-start),
         var(--token-color-nomad-gradient-primary-start));
     background-size: 400%;
     animation: gradient 10s ease infinite;
     display: block;
-    border-radius: inherit;
+    border-radius: round(1.5);
 
-    &:focus,
-    &:focus-visible {
-      box-shadow: var(--token-color-palette-green-300);
-      border-radius: round(1.5)
+    .hds-card__container {
+      padding: 0.75rem;
+      background: transparent;
+      border-radius: inherit;
+
+      &:focus,
+      &:focus-visible {
+        box-shadow: var(--token-color-palette-green-300);
+        border-radius: inherit;
+      }
     }
   }
+
 }
 
 footer {
-  padding: 1em 0 2em;
+  padding: 1rem 0 2rem;
   justify-items: center;
 
   hr {
@@ -264,13 +284,13 @@ footer {
     padding-bottom: 1.5em;
 
     p {
-      padding-left: 3em;
-      padding-right: 1.5em;
+      padding-left: 3rem;
+      padding-right: 1.5rem;
       display: inline-flex;
     }
 
     a {
-      padding-right: 3em;
+      padding-right: 3rem;
     }
   }
 }
@@ -298,13 +318,13 @@ footer {
 }
 
 .wave:nth-of-type(2) {
-  bottom: -1.25em;
+  bottom: -1.25rem;
   animation: wave 18s linear reverse infinite;
   opacity: 0.8;
 }
 
 .wave:nth-of-type(3) {
-  bottom: -5.5em;
+  bottom: -5.5rem;
   animation: wave 20s -1s reverse infinite;
   opacity: 0.9;
 }
