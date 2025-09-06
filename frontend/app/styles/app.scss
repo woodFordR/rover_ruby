@@ -42,6 +42,7 @@ a.hds-button.mock-active {
 
 aside {
   justify-items: right;
+  margin-left: 1rem;
 
   a {
     color: inherit !important;
@@ -98,12 +99,15 @@ body {
     overflow: hidden;
   }
 
+  .hds-app-frame__sidebar {
+    position: fixed;
+    margin-top: 5rem;
+  }
+
   .header-card-container {
-    padding-bottom: 1rem;
-    align-items: center;
+    padding-bottom: 2rem;
 
     .hds-breadcrumb__list>.hds-breadcrumb__item:not(:last-child)::after {
-      justify-items: right;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       color: #3b3d45 !important;
       padding: 0 .65rem !important;
@@ -114,6 +118,8 @@ body {
       display: inline-block !important;
       animation: birds 2.0s linear infinite !important;
     }
+
+    align-items: center;
 
     nav {
 
@@ -126,9 +132,9 @@ body {
           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
           font-size: xx-large !important;
           font-weight: 900 !important;
-          padding: 0 0.65rem !important;
-          height: 2rem;
-          margin: 0;
+          padding: 1rem !important;
+          height: 1rem;
+          margin: 1rem;
 
           display: inline-block !important;
           animation: birds 1.5s linear infinite !important;
@@ -200,7 +206,10 @@ body {
 #hds-main {
   padding: 4rem 10rem 2rem;
   overflow: scroll !important;
-  flex: column !important
+}
+
+.body-container-content {
+  margin-left: 4rem;
 }
 
 .code {
