@@ -6,6 +6,13 @@
 // rgba(96, 222, 169, 1) 38%,  #60dea9
 // rgba(99, 208, 255, 1) 98%) #63d0ff
 // rgba(0, 194, 226, 1) #00C2E2
+// #F0DB7D !important;
+// #3b3d45
+// rgb(228, 251, 255),
+// rgb(215, 233, 248),
+// rgb(204, 255, 238),
+// rgb(202, 239, 255));
+
 
 :root {
   --swiper-navigation-size: 44px;
@@ -71,7 +78,7 @@ footer {
 hr {
   border: solid !important;
   margin: 1.5rem !important;
-  border-color: #F0DB7D !important;
+  border-color: #3b3d45 !important;
 }
 
 html {
@@ -106,17 +113,22 @@ body {
 
   .header-card-container {
     padding-bottom: 2rem;
+    border-radius: 0;
+
+    h2 {
+      color: rgb(127, 234, 255);
+    }
 
     .hds-breadcrumb__list>.hds-breadcrumb__item:not(:last-child)::after {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      color: #3b3d45 !important;
+      color: rgb(127, 234, 255) !important;
       padding: 0 .65rem !important;
       content: "~" !important;
       font-size: xx-large;
       font-weight: 900;
       content: "~" !important;
       display: inline-block !important;
-      animation: birds 2.0s linear infinite !important;
+      animation: birds 6.0s linear infinite !important;
     }
 
     align-items: center;
@@ -128,7 +140,7 @@ body {
         span {
           text-decoration: none !important;
           background-color: transparent !important;
-          color: #3b3d45 !important;
+          color: rgb(127, 234, 255) !important;
           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
           font-size: xx-large !important;
           font-weight: 900 !important;
@@ -137,7 +149,7 @@ body {
           margin: 1rem;
 
           display: inline-block !important;
-          animation: birds 1.5s linear infinite !important;
+          animation: birds 3.5s linear infinite !important;
         }
       }
 
@@ -163,18 +175,14 @@ body {
     }
 
     .hds-card__container {
-      background: linear-gradient(-45deg,
-          rgba(0, 194, 226, 1),
-          rgba(107, 172, 228, 1));
-      background-size: 400%;
-      animation: gradient 10s ease infinite;
+      background: #3b3d45;
       display: block;
-      border-radius: inherit;
+      border-radius: round(0);
 
       &:focus,
       &:focus-visible {
         box-shadow: var(--token-color-palette-green-300);
-        border-radius: round(1.5)
+        border-radius: inherit;
       }
     }
   }
@@ -188,6 +196,35 @@ body {
     animation: gradient 10s ease infinite;
     display: block;
     border-radius: round(1.5);
+
+    .hds-card__container {
+      padding: 0.75rem;
+      background: transparent;
+      border-radius: inherit;
+
+      &:focus,
+      &:focus-visible {
+        box-shadow: var(--token-color-palette-green-300);
+        border-radius: inherit;
+      }
+    }
+  }
+
+  .portfolio-card-container {
+    padding: 0.75rem;
+    height: 28.75rem;
+    background: linear-gradient(-45deg,
+        var(--token-color-packer-gradient-primary-start),
+        var(--token-color-nomad-gradient-primary-start));
+    background-size: 400%;
+    animation: gradient 10s ease infinite;
+    display: block;
+    border-radius: round(1.5);
+
+    .hds-code-block {
+      height: 17.25rem;
+      overflow-y: auto;
+    }
 
     .hds-card__container {
       padding: 0.75rem;
@@ -264,16 +301,6 @@ body {
     color: #6BACE4 !important;
   }
 
-}
-
-.portfolio-card-div {
-  padding: 2.25rem 1.75rem;
-  height: 28.75rem;
-
-  .hds-code-block {
-    height: 17.25rem;
-    overflow-y: auto;
-  }
 }
 
 .swiper-container {
