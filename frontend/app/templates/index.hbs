@@ -7,13 +7,13 @@
 />
 <Hds::Separator />
 <Hds::Layout::Grid
-  @gap="32"
-  @columnMinWidth="10%"
+  @gap="16"
+  @columnMinWidth="5%"
   {{style height="100%" grid-template-rows="min-content"}}
   as |LG|
 >
   <LG.Item></LG.Item>
-  <LG.Item @colspan={{4}}>
+  <LG.Item @colspan={{9}}>
     <Page::DataCard
       @cardIcon="image"
       @cardTitleLink="Recent Photos"
@@ -21,7 +21,7 @@
       @cardDescription="Here are some photos from my painting."
     />
   </LG.Item>
-  <LG.Item @colspan={{4}}>
+  <LG.Item @colspan={{9}}>
     <Page::DataCard
       @cardIcon="file-check"
       @cardTitleLink="Current Resume"
@@ -30,7 +30,7 @@
     />
   </LG.Item>
   <LG.Item></LG.Item>
-  <LG.Item @colspan={{10}}>
+  <LG.Item @colspan={{20}}>
     <Swiper::Carousel
       @className="index-page-gallery"
       @images={{array
