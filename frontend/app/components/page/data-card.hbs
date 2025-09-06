@@ -6,21 +6,26 @@
     @hasBorder={{true}}
     ...attributes
   >
-    <Hds::Layout::Flex @align="center" @gap="16" as |LF|>
+    <Hds::Layout::Flex @justify="start" @align="center" @gap="16" as |LF|>
       <LF.Item>
         <Hds::IconTile @icon={{@cardIcon}} @size="medium" />
+      </LF.Item>
+      <LF.Item>
         <Hds::Text::Display @tag="h2" @size="300">
           {{@cardTitleLink}}
         </Hds::Text::Display>
+      </LF.Item>
+      <LF.Item>
         <Hds::Badge
           @text={{@cardTitleBadge}}
           @color="success"
           @icon="check-circle"
         />
-        <Hds::Text::Body @tag="p">
-          {{@cardDescription}}
-        </Hds::Text::Body>
       </LF.Item>
     </Hds::Layout::Flex>
+    <Hds::Separator />
+    <Hds::Text::Body @tag="p">
+      {{@cardDescription}}
+    </Hds::Text::Body>
   </Hds::Card::Container>
 </div>
