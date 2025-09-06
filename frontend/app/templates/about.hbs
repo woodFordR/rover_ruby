@@ -6,8 +6,14 @@
   }}
 />
 <Hds::Separator />
-<Hds::Layout::Grid @columnMinWidth="50%" @gap="32" as |LG|>
-  <LG.Item>
+<Hds::Layout::Grid
+  @gap="32"
+  @columnMinWidth="5%"
+  {{style height="100%" grid-template-rows="min-content"}}
+  as |LG|
+>
+  <LG.Item></LG.Item>
+  <LG.Item @colspan={{9}}>
     <div class="body-data-card-container">
       <Page::DataCard
         @cardIcon="zap"
@@ -31,7 +37,7 @@
       />
     </div>
   </LG.Item>
-  <LG.Item>
+  <LG.Item @colspan={{9}}>
     <div class="body-data-card-container">
       <Page::DataCard
         @cardIcon="history"
@@ -45,4 +51,5 @@
       />
     </div>
   </LG.Item>
+  <LG.Item></LG.Item>
 </Hds::Layout::Grid>

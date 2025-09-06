@@ -6,8 +6,14 @@
   }}
 />
 <Hds::Separator />
-<Hds::Layout::Grid @columnMinWidth="50%" @gap="32" as |LG|>
-  <LG.Item>
+<Hds::Layout::Grid
+  @gap="32"
+  @columnMinWidth="10%"
+  {{style height="100%" grid-template-rows="min-content"}}
+  as |LG|
+>
+  <LG.Item></LG.Item>
+  <LG.Item @colspan={{4}}>
     <Page::DataCard
       @cardIcon="image"
       @cardTitleLink="Recent Photos"
@@ -15,7 +21,7 @@
       @cardDescription="Here are some photos from my painting."
     />
   </LG.Item>
-  <LG.Item>
+  <LG.Item @colspan={{4}}>
     <Page::DataCard
       @cardIcon="file-check"
       @cardTitleLink="Current Resume"
@@ -23,7 +29,8 @@
       @cardDescription="Here is a link to my resume. My contact page contains more information."
     />
   </LG.Item>
-  <LG.Item @colspan={{2}} @style={{"align-items: center"}}>
+  <LG.Item></LG.Item>
+  <LG.Item @colspan={{10}}>
     <Swiper::Carousel
       @className="index-page-gallery"
       @images={{array
@@ -32,6 +39,5 @@
         (hash src="/assets/images/master-bedroom-emerald-paint3.png" alt="new emerald green painted room part 3")
       }}
     />
-    <Hds::Separator />
   </LG.Item>
 </Hds::Layout::Grid>
