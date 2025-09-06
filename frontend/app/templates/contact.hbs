@@ -6,50 +6,75 @@
   }}
 />
 <Hds::Separator />
-<address>
-<br />
-  <div class="body-data-card-container">
-    <ul class="exp-card-list">
-      <Hds::Card::Container @tag="li" @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
-        <Hds::Badge @text="Scala Computing Inc." @icon="history" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
-        <br />
-        <br />
-        <p class="hds-typography-display-300">
-          From October 2024 until June 2025, I helped build a Textual Python
-          application which connected a user to their simulated network that
-          was emulated on our platform, deployed with Pulumi, and connected by
-          a Firecracker to a AWS bare metal server. It provided a secure, quick
-          connection without gaining access to sensitive data.
-        </p>
-      </Hds::Card::Container>
-      <br />
-      <br />
-      <Hds::Card::Container @tag="li" @level="mid" @levelHover="high" @levelActive="mid" @hasBorder={{true}}>
-        <Hds::Badge @text="Email, X, Github" @icon="mail" @color="success" @type="inverted" @iconPosition="trailing" @size="large" />
-        <Hds::Text::Body @tag="p" @size="300">
-          adam@kaewell.com
-          <Hds::Button
-            @isInline={{true}}
-            @isIconOnly={{true}}
-            @text="X.com"
-            @color="tertiary"
-            @icon="twitter-x"
-            @iconPosition="trailing"
-            @href="https://twitter.com/akaewell"
-            @size="large"
-          />
-          <Hds::Button
-            @isInline={{true}}
-            @isIconOnly={{true}}
-            @text="github"
-            @color="tertiary"
-            @icon="github"
-            @iconPosition="trailing"
-            @href="https://github.com/woodFordR"
-            @size="large"
-          />
-        </Hds::Text::Body>
-      </Hds::Card::Container>
-    </ul>
-  </div>
-</address>
+<div class="contact-container">
+  <Hds::Layout::Grid @columnMinWidth="50%" @gap="32" as |LG|>
+    <LG.Item>
+      <div class="body-data-card-container">
+        <Hds::Card::Container
+          @level="mid"
+          @levelHover="high"
+          @levelActive="mid"
+          @hasBorder={{true}}
+        >
+          <Hds::Layout::Flex @justify="center" @align="center" @gap="16" as |LF|>
+            <LF.Item>
+              <Hds::IconTile @icon="user" />
+            </LF.Item>
+            <LF.Item>
+              <Hds::Text::Display @tag="h2" @size="300">
+                User Contact Information
+              </Hds::Text::Display>
+            </LF.Item>
+            <LF.Item>
+              <Hds::Badge
+                @text="Important Links"
+                @icon="check-circle"
+                @color="success"
+                @size="large"
+              />
+            </LF.Item>
+          </Hds::Layout::Flex>
+          <Hds::Separator />
+          <Hds::Layout::Flex @justify="center" @align="center" @gap="32" as |LF|>
+            <LF.Item>
+              <Hds::Button
+                @isInline={{true}}
+                @isIconOnly={{true}}
+                @text="adam@kaewell.com"
+                @color="tertiary"
+                @icon="mail"
+                @iconPosition="trailing"
+                @href="mailto:adam@kaewell.com"
+                @size="large"
+              />
+            </LF.Item>
+            <LF.Item>
+              <Hds::Button
+                @isInline={{true}}
+                @isIconOnly={{true}}
+                @text="X.com"
+                @color="tertiary"
+                @icon="twitter-x"
+                @iconPosition="trailing"
+                @href="https://twitter.com/akaewell"
+                @size="large"
+              />
+            </LF.Item>
+            <LF.Item>
+              <Hds::Button
+                @isInline={{true}}
+                @isIconOnly={{true}}
+                @text="github"
+                @color="tertiary"
+                @icon="github"
+                @iconPosition="trailing"
+                @href="https://github.com/woodFordR"
+                @size="large"
+              />
+            </LF.Item>
+          </Hds::Layout::Flex>
+        </Hds::Card::Container>
+      </div>
+    </LG.Item>
+  </Hds::Layout::Grid>
+</div>

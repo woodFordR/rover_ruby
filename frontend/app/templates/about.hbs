@@ -6,9 +6,9 @@
   }}
 />
 <Hds::Separator />
-<div class="body-data-card-container">
-  <Hds::Layout::Grid @columnMinWidth="50%" @gap="32" as |LG|>
-    <LG.Item>
+<Hds::Layout::Grid @columnMinWidth="50%" @gap="32" as |LG|>
+  <LG.Item>
+    <div class="body-data-card-container">
       <Page::DataCard
         @cardIcon="zap"
         @cardTitleLink="About Adam"
@@ -29,6 +29,20 @@
       compassionate about solving complex problems, working alongside a
       motivated team, and learning new skills along my journey."
       />
-    </LG.Item>
-  </Hds::Layout::Grid>
-</div>
+    </div>
+  </LG.Item>
+  <LG.Item>
+    <div class="body-data-card-container">
+      <Page::DataCard
+        @cardIcon="history"
+        @cardTitleLink="Brief Work History"
+        @cardTitleBadge="Scala Computing Inc."
+        @cardDescription="From October 2024 until June 2025, I helped build a
+      Textual Python application which connected a user to their simulated
+      network that was emulated on our platform, deployed with Pulumi, and
+      connected by a Firecracker to a AWS bare metal server. It provided a
+      secure, quick connection without gaining access to sensitive data."
+      />
+    </div>
+  </LG.Item>
+</Hds::Layout::Grid>
