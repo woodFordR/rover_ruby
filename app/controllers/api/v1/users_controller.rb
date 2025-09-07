@@ -4,7 +4,7 @@ class Api::V1::UsersController < Clearance::UsersController
 
   def new
     @user = user_from_params
-    # render template: "users/new"
+    render json: serialize(@user)
   end
 
   def create
@@ -12,27 +12,32 @@ class Api::V1::UsersController < Clearance::UsersController
 
     if @user.save
       sign_in @user
+      url_after_create
     else
-      render json {}
-      # render template: "users/new", status: :unprocessable_entity
+      render json: serialize(@user), status: :unprocessable_entity
     end
   end
 
   def show
+    # @user = User.find_by_username(params[:user][:username])
+    # if @user
+    #   render json: serialize(@user)
+    # else
+    #   render json: { User.null_id }, status: :unprocessable_entity
+    # end 
   end
 
   private
 
   def redirect_signed_in_users
     if signed_in?
-      # redirect_to Clearance.configuration.redirect_url
-      none
+      @user = User.find_by_id(current_user.id)
+      render json: serialize(@user)
     end
   end
 
   def url_after_create
-    # Clearnace.configuration.redirect_url
-    none
+    render json: serialize(@user)
   end
 
   def user_from_params
@@ -47,7 +52,7 @@ class Api::V1::UsersController < Clearance::UsersController
     end
   end
 
-  def use_params
+  def user_params
     params[Clearance.configuration.user_parameter] || {}
   end
 end
