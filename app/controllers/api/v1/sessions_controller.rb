@@ -28,12 +28,12 @@ class Api::V1::SessionsController < Clearance::SessionsController
 
   def redirect_signed_in_users
     if signed_in?
-      # redirect_to url_for_signed_in_users
+      render json: serialize(current_user)
     end
   end
 
   def url_after_create
-    # Clearance.configuration.redirect_url
+    render json: serialize(current_user)
   end
 
   def url_after_destroy
