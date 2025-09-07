@@ -6,7 +6,6 @@ class Api::V1::PasswordsController < Clearance::PasswordsController
   skip_before_action :require_login, only: [:create, :edit, :new, :update], raise: false
 
   def new
-    # render template: "passwords/new"
   end
 
   def create
