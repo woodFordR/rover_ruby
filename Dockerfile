@@ -52,7 +52,7 @@ USER rails:rails
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-RUN bundle exec rake assets:precompile
+# RUN bundle exec rake assets:precompile
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
