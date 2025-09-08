@@ -3,12 +3,12 @@ source "https://rubygems.org"
 ruby "3.4.5"
 
 gem "alba"
-gem 'aws-sdk-s3'
+gem 'aws-sdk'
 gem "benchmark"
 gem "bootsnap", require: false
 gem "clearance"
 gem "ember-cli-rails"
-# gem "fiddle"
+gem "fiddle"
 gem "image_processing", "~> 1.2"
 gem "logger"
 gem "ostruct"
