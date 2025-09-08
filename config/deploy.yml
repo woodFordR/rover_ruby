@@ -1,11 +1,11 @@
 service: ruby_rover
 
-image: a2k11/ruby_rover
+image: woodFordR/ruby_rover
 servers:
   - PRODUCTION_SERVER
 
 registry:
-  username: a2k11
+  username: woodFordR
   password:
     - KAMAL_REGISTRY_PASSWORD
 
