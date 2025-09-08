@@ -7,16 +7,14 @@ class UserSerializer < ApplicationSerializer
   end
   attribute :attributes do |obj|
     {
-      "resumePath": Rails.application.routes.url_helpers.rails_blob_path(
-        obj.resume,
-        only_path: true
-      ),
+      "resumePath": obj.resume_blob.url,
       "firstName": obj.first_name,
       "lastName": obj.last_name,
       "username": obj.username,
       "trackVisits": obj.track_visits,
       "email": obj.email,
       "userId": obj.id.to_s,
+      "photos": obj.photo_list
     }
   end
 end

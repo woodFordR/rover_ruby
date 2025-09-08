@@ -2,6 +2,11 @@ class Api::V1::UsersController < Clearance::UsersController
   before_action :redirect_signed_in_users, only: [:create, :new]
   skip_before_action :require_login, only: [:create, :new], raise: false
 
+  def index
+    @user = User.find_by(user_params)
+    render json: serialize(@user)
+  end
+
   def new
     @user = user_from_params
     render json: serialize(@user)
@@ -19,6 +24,8 @@ class Api::V1::UsersController < Clearance::UsersController
   end
 
   def show
+    # @user = user_from_params
+    # render json: serialize(@user)
     # @user = User.find_by_username(params[:user][:username])
     # if @user
     #   render json: serialize(@user)
@@ -53,7 +60,8 @@ class Api::V1::UsersController < Clearance::UsersController
   end
 
   def user_params
-    params[Clearance.configuration.user_parameter] || {}
+    # params[Clearance.configuration.user_parameter] || {}
+    params.require(:user).permit(:email)
   end
 end
 
