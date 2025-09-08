@@ -8,7 +8,7 @@ gem "benchmark"
 gem "bootsnap", require: false
 gem "clearance"
 gem "ember-cli-rails"
-gem "fiddle"
+# gem "fiddle"
 gem "image_processing", "~> 1.2"
 gem "logger"
 gem "ostruct"
