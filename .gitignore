@@ -47,5 +47,3 @@ frontend/.watchman-cookie*
 node_modules/
 node_modules/*
 
-public/images/*
-

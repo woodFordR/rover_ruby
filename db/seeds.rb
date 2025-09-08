@@ -15,7 +15,106 @@ user = User.create({
   email: seed_user[:email],
   password: seed_user[:password]
 })
+
 user.save!
+
+user.resume.attach(
+  io: File.open("#{Dir.pwd}/public/resume.pdf"),
+  filename: 'file.pdf',
+  content_type: 'application/pdf',
+  identify: false
+)
+
+user.save!
+[
+  {
+    name: "Adam & Calloway",
+    description: "",
+    file_name: "adam-callie.jpeg",
+  },
+  {
+    name: "Family @ Beach",
+    description: "",
+    file_name: "beach-fam.jpeg",
+  },
+  {
+    name: "Calloway & Woodford",
+    description: "",
+    file_name: "callie-woody.jpeg",
+  },
+  {
+    name: "Calloway @ Beach",
+    description: "",
+    file_name: "callie1.JPG",
+  },
+  {
+    name: "Calloway @ Beach",
+    description: "",
+    file_name: "callie2.JPG",
+  },
+  {
+    name: "Calloway @ Beach",
+    description: "",
+    file_name: "callie3.JPG",
+  },
+  {
+    name: "Me & Callie",
+    description: "",
+    file_name: "callie4.JPG",
+  },
+  {
+    name: "Me & Callie",
+    description: "",
+    file_name: "callie5.JPG",
+  },
+  {
+    name: "Capybara @ Zoo",
+    description: "",
+    file_name: "capy.jpeg",
+  },
+  {
+    name: "Family @ Zoo",
+    description: "",
+    file_name: "fam.jpeg",
+  },
+  {
+    name: "Kaewell Girls",
+    description: "",
+    file_name: "girls.jpeg",
+  },
+  {
+    name: "Me & Callie & The Wicked Cast",
+    description: "",
+    file_name: "wicked.jpeg",
+  },
+  {
+    name: "Woodford & Guiness",
+    description: "",
+    file_name: "woody-guiness.jpeg",
+  },
+  {
+    name: "Woodford",
+    description: "",
+    file_name: "woody1.jpeg",
+  },
+  {
+    name: "Me & Callie & A Zebra",
+    description: "",
+    file_name: "zebra.jpeg",
+  }
+].each do |file|
+  photo = Photo.create!({
+    name: file[:name],
+    description: file[:description],
+    user_id: user.id
+  })
+  photo.file.attach(
+    io: File.open("#{Dir.pwd}/public/images/#{file[:file_name]}"),
+    filename: file[:file_name],
+  )
+  photo.save!
+end
+
 
 logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint', 'hcp',
   'boundary', 'consul', 'vault', 'vault-secrets', 'vault-radar']
@@ -194,14 +293,7 @@ logo_options = ['nomad', 'packer', 'vagrant', 'terraform', 'waypoint', 'hcp',
   Project.create(item)
 end
 
+user.save!
 
-# avatar.attach(io: File.open("{Dir.pwd}/public/images/#{avatar_file}"),
-#   filename: avatar_file,content_type: 'image/jpg')
+# content_type: 'image/jpg')
 
-
-# @user.resume.attach(
-#   io: File.open('/path/to/file'),
-#   filename: 'file.pdf',
-#   content_type: 'application/pdf',
-#   identify: false
-# )
