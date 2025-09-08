@@ -8,6 +8,6 @@ export default class User extends Model {
   @attr('string') username;
   @attr('string') email;
   @attr('integer') trackVisits;
-  @attr() photoPaths;
+  @attr photos;
 }
 

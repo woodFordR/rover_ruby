@@ -1,4 +1,8 @@
-<div class="swiper-container" {{did-insert (fn this.setupSwiper)}}>
+<div
+  class="swiper-container"
+  {{did-insert (fn this.setupSwiper)}}
+  ...attributes
+>
   <Hds::Layout::Grid
     @columnMinWidth="10%"
     {{style height="100%" grid-template-rows="min-content"}}
@@ -11,7 +15,7 @@
         <div class="swiper-wrapper">
           {{#each @images as |image|}}
             <div class="swiper-slide">
-              <img src="{{image.src}}" alt="{{image.alt}}" />
+              <img src="{{image.photoPath}}" alt="{{image.photoTitle}}" />
             </div>
           {{/each}}
         </div>

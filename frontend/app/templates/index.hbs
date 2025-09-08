@@ -34,11 +34,7 @@
   <LG.Item @colspan={{20}}>
     <Swiper::Carousel
       @className="index-page-gallery"
-      @images={{array
-        (hash src="/assets/images/master-bedroom-emerald-paint.png" alt="new emerald green painted room part 1")
-        (hash src="/assets/images/master-bedroom-emerald-paint2.png" alt="new emerald green painted room part 2")
-        (hash src="/assets/images/master-bedroom-emerald-paint3.png" alt="new emerald green painted room part 3")
-      }}
+      @images={{@model.photos}}
     />
   </LG.Item>
 </Hds::Layout::Grid>
