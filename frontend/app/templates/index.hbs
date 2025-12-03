@@ -16,21 +16,31 @@
   <LG.Item @colspan={{9}}>
     <Page::DataCard
       @cardIcon="image"
-      @cardTitleLink="Recent Photos"
-      @cardTitleBadge="Beach Vacation August 2025"
-      @cardDescription="These photos below were taken during my beach vacation
-        this summer with my daughter, Calloway, and our dog Woodford. We were
-        at the pool, zoo, park, and beach. Enjoy."
+      @cardTitleLink="DareDevil Deployer Progress"
+      @cardTitleBadge="December 4, 2025"
+      @cardDescription="For the past 3 months, I've been diligently working on
+        a project called DareDevil Deployer. It will provide dev, test, stage,
+        and prod environments for application development. The architecture is
+        composed of a FastAPI backend using the python SQLModel ORM. It runs
+        alongside a frontend composed of React v19 using Typescript thus
+        achieving end-to-end type safety all the way to a PostgreSQL DB.
+        There's extensive Github API integration using JWT authentication for
+        Github Apps. OAuth2 security for users with Argon2 password hashing
+        provides another layer of security to protect permissions being enabled
+        for the github organization. Sentry and logfire provide structured
+        logging for an observable infrastructure. There will be more updates
+        to come, please check out the github pages for the repository for
+        more information. Enjoy."
     />
   </LG.Item>
   <LG.Item @colspan={{9}}>
     <Page::DataCard
-      @cardIcon="file-check"
-      @cardTitleLink="Current Updates"
-      @cardTitleBadge="September 15, 2025"
-      @cardDescription="Here is a link to my resume. My contact page contains
-        more information."
-      @cardLink={{@model.resumePath}}
+      @cardIcon="image"
+      @cardTitleLink="Recent Photos"
+      @cardTitleBadge="Thanksgiving - November 27, 2025"
+      @cardDescription="These photos below were taken during my beach vacation
+        this summer with my daughter, Calloway, and our dog Woodford. We were
+        at the pool, zoo, park, and beach. Enjoy."
     />
   </LG.Item>
   <LG.Item></LG.Item>
@@ -40,4 +50,29 @@
       @images={{@model.photos}}
     />
   </LG.Item>
+  <LG.Item></LG.Item>
+  <LG.Item @colspan={{9}}>
+    <Page::DataCard
+      @cardIcon="image"
+      @cardTitleLink="Archived Photos"
+      @cardTitleBadge="Beach Vacation August 2025"
+      @cardDescription="These photos are archived and will be back. The
+        photo-gallery-feature will be coming soon. The original note is here:
+
+        'These photos below were taken during my beach vacation
+        this summer with my daughter, Calloway, and our dog Woodford. We were
+        at the pool, zoo, park, and beach. Enjoy.'"
+    />
+  </LG.Item>
+  <LG.Item @colspan={{9}}>
+    <Page::DataCard
+      @cardIcon="file-check"
+      @cardTitleLink="Resume Updates"
+      @cardTitleBadge="December 03, 2025"
+      @cardDescription="Here is a link to my resume. My contact page contains
+        more information."
+      @cardLink={{@model.resumePath}}
+    />
+  </LG.Item>
+  <LG.Item></LG.Item>
 </Hds::Layout::Grid>
