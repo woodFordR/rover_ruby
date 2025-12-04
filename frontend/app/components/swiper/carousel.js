@@ -10,10 +10,11 @@ export default class CarouselComponent extends Component {
   setupSwiper(element) {
     this.swiperInstance = new Swiper(element.querySelector('.swiper'), {
       loop: true,
+      centeredSlides: true,
       slidesPerView: 1,
       spaceBetween: 30,
       autoplay: {
-        delay: 6000,
+        delay: 18000,
         disableOnInteraction: false,
       },
       navigation: {
@@ -29,10 +30,10 @@ export default class CarouselComponent extends Component {
           slidesPerView: 1,
         },
         768: {
-          slidesPerView: 1,
+          slidesPerView: 2,
         },
         1024: {
-          slidesPerView: 1,
+          slidesPerView: 3,
         },
       },
     });

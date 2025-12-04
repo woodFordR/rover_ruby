@@ -47,5 +47,9 @@ frontend/.watchman-cookie*
 node_modules/
 node_modules/*
 
+archived_photos/
+archived_photos/*
 
 /config/credentials/production.key
+
+/config/credentials/development.key

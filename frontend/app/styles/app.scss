@@ -83,16 +83,19 @@ hr {
 
 html {
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: 0;
   padding: 0;
 }
 
 body {
   height: 100%;
+  overflow-x: hidden;
   overflow-y: auto;
   justify-content: center;
-  margin: auto;
+  margin: 0;
+  padding: 0;
   background: linear-gradient(315deg,
       rgba(0, 194, 226, 1) 3%,
       rgba(107, 172, 228, 1) 38%,
@@ -106,27 +109,90 @@ body {
     overflow: hidden;
   }
 
+  .hds-app-frame {
+    position: relative;
+    display: grid !important;
+    grid-template-columns: 8vw 1fr !important;
+    grid-template-rows: auto 1fr auto !important;
+    gap: 0 1.5vw !important;
+    overflow-x: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    min-height: 100vh !important;
+    box-sizing: border-box !important;
+  }
+
+  .hds-app-frame__header {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+  }
+
   .hds-app-frame__sidebar {
-    position: fixed;
-    margin-top: 5rem;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    position: sticky !important;
+    top: 11rem !important;
+    align-self: start !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    z-index: 100;
+    overflow-x: hidden;
+    box-sizing: border-box !important;
+  }
+
+  .hds-app-frame__main {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    display: block !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .hds-app-frame__header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000;
+    background: linear-gradient(315deg,
+        rgba(0, 194, 226, 1) 3%,
+        rgba(107, 172, 228, 1) 38%,
+        rgba(127, 255, 212, 1) 68%,
+        rgba(99, 208, 255, 1) 98%);
   }
 
   .header-card-container {
-    padding-bottom: 2rem;
+    padding-bottom: 0.75rem;
     border-radius: 0;
 
     h2 {
       color: rgb(127, 234, 255);
+      font-size: 1.5rem !important;
+      white-space: nowrap;
+    }
+
+    .hds-breadcrumb__list {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
     }
 
     .hds-breadcrumb__list>.hds-breadcrumb__item:not(:last-child)::after {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       color: rgb(127, 234, 255) !important;
-      padding: 0 .65rem !important;
+      padding: 0 0.4rem !important;
       content: "~" !important;
-      font-size: xx-large;
-      font-weight: 900;
-      content: "~" !important;
+      font-size: 1.5rem !important;
+      font-weight: 900 !important;
       display: inline-block !important;
       animation: birds 6.0s linear infinite !important;
     }
@@ -142,34 +208,34 @@ body {
           background-color: transparent !important;
           color: rgb(127, 234, 255) !important;
           font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
-          font-size: xx-large !important;
+          font-size: 1.5rem !important;
           font-weight: 900 !important;
-          padding: 1rem !important;
-          height: 1rem;
-          margin: 1rem;
+          padding: 0.4rem !important;
+          height: auto;
+          margin: 0.2rem;
 
           display: inline-block !important;
-          animation: birds 3.5s linear infinite !important;
+          animation: birds 6.0s linear infinite !important;
         }
       }
 
-      li:nth-child(1) {
+      li:nth-child(1) span {
         animation-delay: 0.25s;
       }
 
-      li:nth-child(2) {
+      li:nth-child(2) span {
         animation-delay: 0.5s;
       }
 
-      li:nth-child(3) {
+      li:nth-child(3) span {
         animation-delay: 0.75s;
       }
 
-      li:nth-child(4) {
+      li:nth-child(4) span {
         animation-delay: 1.0s;
       }
 
-      li:nth-child(5) {
+      li:nth-child(5) span {
         animation-delay: 1.25s;
       }
     }
@@ -188,7 +254,7 @@ body {
   }
 
   .body-data-card-container {
-    padding: 0.75rem;
+    padding: 0.5rem;
     background: linear-gradient(-45deg,
         var(--token-color-packer-gradient-primary-start),
         var(--token-color-nomad-gradient-primary-start));
@@ -198,7 +264,7 @@ body {
     border-radius: round(1.5);
 
     .hds-card__container {
-      padding: 0.75rem;
+      padding: 0.5rem;
       background: transparent;
       border-radius: inherit;
 
@@ -207,6 +273,29 @@ body {
         box-shadow: var(--token-color-palette-green-300);
         border-radius: inherit;
       }
+    }
+
+    h2 {
+      font-size: 0.9rem !important;
+    }
+
+    p {
+      font-size: 0.75rem !important;
+      line-height: 1.4;
+    }
+
+    .hds-icon-tile {
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+    }
+
+    .hds-badge {
+      font-size: 0.65rem !important;
+      padding: 0.2rem 0.4rem !important;
+    }
+
+    .hds-layout-flex {
+      gap: 0.65rem !important;
     }
   }
 
@@ -241,12 +330,42 @@ body {
 }
 
 #hds-main {
-  padding: 4rem 10rem 2rem;
-  overflow: scroll !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
+
 .body-container-content {
-  margin-left: 4rem;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: visible;
+
+  > .hds-page-header:first-child {
+    margin: 0 !important;
+    padding: 1.5rem 0 1.5rem 1.5rem !important;
+    width: 66% !important;
+    max-width: 66% !important;
+    box-sizing: border-box !important;
+  }
+
+  > *:not(.hds-page-header):not(.hds-separator) {
+    padding-left: 1.5rem;
+    padding-right: 0;
+  }
+
+  > .hds-separator {
+    padding: 0 !important;
+    margin: 1.5rem 0 1.5rem -18vw !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
 }
 
 .code {
@@ -277,30 +396,98 @@ body {
 }
 
 .hds-page-header {
+  margin: 0 0 1.5rem 0 !important;
+  padding: 1.5rem !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  background-color: #3b3d45 !important;
+  display: block !important;
+  visibility: visible !important;
+  position: relative !important;
+  z-index: 1 !important;
+  min-height: 80px !important;
 
-  margin-left: 3.5rem;
+  > div {
+    width: 100% !important;
+    display: block !important;
+  }
 
   div.hds-layout-grid-item>a>span {
     font-weight: bolder;
-    color: #3b3d45;
+    color: rgb(127, 234, 255);
   }
 
   nav {
     justify-items: right;
-    margin-right: 3.5rem;
+    margin-right: 0;
   }
 
   .hds-badge {
-    background-color: #3b3d45 !important;
-    color: #60dea9 !important;
+    background-color: #60dea9 !important;
+    color: #3b3d45 !important;
     border: #6BACE4 !important;
   }
 
   .hds-icon-tile {
-    background-color: #3b3d45 !important;
-    color: #6BACE4 !important;
+    background-color: #60dea9 !important;
+    color: #3b3d45 !important;
   }
 
+  .hds-page-header__title {
+    font-size: 1.25rem !important;
+    overflow: visible !important;
+    color: rgb(127, 234, 255) !important;
+    font-weight: 700 !important;
+    display: block !important;
+    white-space: normal !important;
+    text-overflow: clip !important;
+    margin: 0 0 0.5rem 0 !important;
+    padding: 0 !important;
+    line-height: 1.5 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    min-height: 2rem !important;
+    max-width: none !important;
+    width: auto !important;
+    position: static !important;
+    z-index: 10 !important;
+    flex: 0 0 auto !important;
+    order: -1 !important;
+    clip: auto !important;
+    clip-path: none !important;
+    transform: none !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+
+    *, h1, h2, h3, h4, h5, h6, span, div {
+      color: rgb(127, 234, 255) !important;
+      font-size: 1.25rem !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      display: inline !important;
+      max-width: none !important;
+      overflow: visible !important;
+    }
+  }
+
+  .hds-page-header__subtitle {
+    color: rgb(127, 234, 255) !important;
+    display: block !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .hds-page-header__description {
+    color: rgb(127, 234, 255) !important;
+    display: block !important;
+    margin-top: 0.5rem !important;
+    font-size: 0.85rem !important;
+  }
 }
 
 .swiper-container {
@@ -420,17 +607,534 @@ body {
   }
 }
 
-@media (max-width: 700px) {
-  .grid {
-    grid-template-areas:
-      'name'
-      'avatar'
-      'bio';
+@media (max-width: 767px) {
+  #hds-main {
+    padding: 1.5rem 1rem 1rem 1rem !important;
+  }
+
+  .body-container-content {
+    margin: 0 !important;
+    padding: 0 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .hds-layout-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)) !important;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hds-layout-grid-item {
+    grid-column: 1 / -1 !important;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hds-app-frame {
+    grid-template-columns: 20vw 1fr !important;
+    gap: 0 !important;
+  }
+
+  .hds-app-frame__sidebar {
+    position: sticky !important;
+    top: 5rem !important;
+    grid-column: 1 !important;
+    align-self: start !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden;
+
+    .hds-button {
+      font-size: 0.7rem !important;
+      padding: 0.4rem 0.3rem !important;
+      min-height: auto !important;
+
+      .hds-button__text {
+        font-size: 0.7rem !important;
+      }
+
+      .hds-icon {
+        width: 14px !important;
+        height: 14px !important;
+      }
+    }
+  }
+
+  .hds-app-frame__main {
+    grid-column: 2 !important;
+    display: block !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-card-container {
+    padding-bottom: 0.5rem !important;
+
+    h2 {
+      font-size: 0.95rem !important;
+    }
+
+    .hds-layout-flex {
+      gap: 0.5rem !important;
+    }
+
+    nav > ol > li span {
+      font-size: 0.85rem !important;
+      padding: 0.2rem !important;
+      margin: 0.1rem !important;
+    }
+
+    .hds-breadcrumb__list > .hds-breadcrumb__item:not(:last-child)::after {
+      font-size: 0.85rem !important;
+      padding: 0 0.2rem !important;
+    }
+  }
+
+  .hds-page-header {
+    margin: 0 !important;
+    padding: 0.75rem 1rem !important;
+
+    nav {
+      margin-right: 0 !important;
+    }
+
+    .hds-page-header__title {
+      font-size: 0.9rem !important;
+
+      * {
+        font-size: 0.9rem !important;
+      }
+    }
+
+    .hds-page-header__subtitle {
+      font-size: 0.75rem !important;
+    }
+
+    .hds-page-header__description {
+      font-size: 0.7rem !important;
+    }
+
+    .hds-link-standalone {
+      font-size: 0.75rem !important;
+
+      span {
+        font-size: 0.75rem !important;
+      }
+
+      .hds-icon {
+        width: 14px !important;
+        height: 14px !important;
+      }
+    }
+
+    .hds-badge {
+      font-size: 0.65rem !important;
+      padding: 0.2rem 0.4rem !important;
+    }
+
+    .hds-icon-tile {
+      width: 1.5rem !important;
+      height: 1.5rem !important;
+    }
+  }
+
+  .portfolio-card-container {
+    height: auto !important;
+    min-height: 25rem;
+
+    .hds-code-block {
+      height: auto !important;
+      min-height: 12rem;
+    }
+  }
+
+  .code {
+    padding-left: 2% !important;
+
+    .code-container {
+      flex-direction: column;
+
+      p {
+        padding-left: 1rem !important;
+        padding-right: 0.5rem !important;
+      }
+
+      a {
+        padding-right: 1rem !important;
+      }
+    }
+  }
+
+  .hds-badge {
+    font-size: 0.75rem !important;
+  }
+
+  .body-data-card-container {
+    padding: 0.35rem !important;
+
+    .hds-card__container {
+      padding: 0.35rem !important;
+    }
+
+    h2 {
+      font-size: 0.75rem !important;
+    }
+
+    p {
+      font-size: 0.65rem !important;
+      line-height: 1.3;
+    }
+
+    .hds-icon-tile {
+      width: 1.25rem !important;
+      height: 1.25rem !important;
+    }
+
+    .hds-badge {
+      font-size: 0.6rem !important;
+      padding: 0.15rem 0.35rem !important;
+    }
+
+    .hds-layout-flex {
+      gap: 0.45rem !important;
+    }
+  }
+
+  .wave {
+    height: 15rem !important;
+  }
+
+  aside {
+    margin-left: 0.5rem !important;
+  }
+
+  footer {
+    padding: 0.5rem 0 1rem !important;
+
+    hr {
+      width: 50% !important;
+    }
+
+    .hds-badge {
+      font-size: 0.6rem !important;
+      padding: 0.15rem 0.3rem !important;
+    }
+
+    a, span, p {
+      font-size: 0.7rem !important;
+    }
   }
 }
 
-@media (min-width: 700px) {
-  .user-profile {
-    display: flex;
+@media (min-width: 768px) and (max-width: 1023px) {
+  #hds-main {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .body-container-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    > .hds-page-header:first-child {
+      margin: 0 !important;
+      padding: 1.25rem 0 1.25rem 1.25rem !important;
+      width: 66% !important;
+      max-width: 66% !important;
+      box-sizing: border-box !important;
+    }
+
+    > *:not(.hds-page-header):not(.hds-separator) {
+      padding-left: 1.25rem;
+      padding-right: 0;
+    }
+
+    > .hds-separator {
+      padding: 0 !important;
+      margin: 1.25rem 0 1.25rem -18vw !important;
+      width: 100vw !important;
+      max-width: 100vw !important;
+    }
+  }
+
+  .hds-app-frame {
+    grid-template-columns: 8vw 1fr !important;
+    gap: 0 1.5vw !important;
+    max-width: 100vw !important;
+    width: 100vw !important;
+    margin: 0 !important;
+  }
+
+  .hds-app-frame__sidebar {
+    position: sticky !important;
+    top: 11rem !important;
+    grid-column: 1 !important;
+    align-self: start !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden;
+
+    .hds-button {
+      font-size: 0.8rem !important;
+      padding: 0.5rem 0.4rem !important;
+
+      .hds-button__text {
+        font-size: 0.8rem !important;
+      }
+
+      .hds-icon {
+        width: 16px !important;
+        height: 16px !important;
+      }
+    }
+  }
+
+  .hds-app-frame__main {
+    grid-column: 2 !important;
+    display: block !important;
+    position: relative !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .header-card-container {
+    h2 {
+      font-size: 1.2rem !important;
+    }
+
+    .hds-layout-flex {
+      gap: 1rem !important;
+    }
+
+    nav > ol > li span {
+      font-size: 1.1rem !important;
+      padding: 0.3rem !important;
+      margin: 0.15rem !important;
+    }
+
+    .hds-breadcrumb__list > .hds-breadcrumb__item:not(:last-child)::after {
+      font-size: 1.1rem !important;
+      padding: 0 0.3rem !important;
+    }
+  }
+
+  .hds-page-header {
+    margin: 0 0 1.25rem 0 !important;
+    padding: 1.25rem !important;
+
+    nav {
+      margin-right: 0 !important;
+    }
+
+    .hds-page-header__title {
+      font-size: 1.1rem !important;
+
+      * {
+        font-size: 1.1rem !important;
+      }
+    }
+
+    .hds-page-header__subtitle {
+      font-size: 0.85rem !important;
+    }
+
+    .hds-page-header__description {
+      font-size: 0.8rem !important;
+    }
+  }
+
+  .portfolio-card-container {
+    height: auto !important;
+    min-height: 26rem;
+
+    .hds-code-block {
+      height: 15rem !important;
+    }
+  }
+
+  .code {
+    padding-left: 3% !important;
+
+    .code-container {
+      p {
+        padding-left: 2rem !important;
+        padding-right: 1rem !important;
+      }
+
+      a {
+        padding-right: 2rem !important;
+      }
+    }
+  }
+
+  .hds-badge {
+    font-size: 0.85rem !important;
+  }
+
+  .body-data-card-container {
+    padding: 0.4rem !important;
+
+    .hds-card__container {
+      padding: 0.4rem !important;
+    }
+
+    h2 {
+      font-size: 0.85rem !important;
+    }
+
+    p {
+      font-size: 0.7rem !important;
+      line-height: 1.35;
+    }
+
+    .hds-icon-tile {
+      width: 1.5rem !important;
+      height: 1.5rem !important;
+    }
+
+    .hds-badge {
+      font-size: 0.65rem !important;
+      padding: 0.2rem 0.4rem !important;
+    }
+
+    .hds-layout-flex {
+      gap: 0.55rem !important;
+    }
+  }
+
+  .wave {
+    height: 20rem !important;
+  }
+
+  aside {
+    margin-left: 0.75rem !important;
+  }
+
+  footer {
+    padding: 0.75rem 0 1.5rem !important;
+
+    hr {
+      width: 80% !important;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    .hds-app-frame {
+      grid-template-columns: 8vw 1fr !important;
+      gap: 0 1.5vw !important;
+      max-width: 96vw !important;
+      width: 96vw !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .hds-app-frame__header {
+      grid-column: 1 / -1 !important;
+      width: 100vw !important;
+      max-width: 100vw !important;
+      margin: 0 !important;
+      padding: 0 !important;
+
+      .hds-page-header {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 1rem 1.5rem !important;
+        box-sizing: border-box !important;
+      }
+
+      .header-card-container {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0.75rem 1.5rem !important;
+        box-sizing: border-box !important;
+
+        h2 {
+          font-size: 2.5rem !important;
+        }
+
+        nav > ol > li span {
+          font-size: 2.5rem !important;
+        }
+
+        .hds-breadcrumb__list > .hds-breadcrumb__item:not(:last-child)::after {
+          font-size: 2.5rem !important;
+        }
+      }
+    }
+
+    .hds-app-frame__sidebar {
+      grid-column: 1 !important;
+      position: sticky !important;
+      top: 13rem !important;
+      align-self: start !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+
+    .hds-app-frame__main {
+      grid-column: 2 !important;
+      display: block !important;
+      position: relative !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: 100vh !important;
+      box-sizing: border-box !important;
+      overflow-x: hidden !important;
+      overflow-y: visible !important;
+    }
+  }
+
+  .hds-page-header {
+    .hds-page-header__title {
+      font-size: 1.5rem !important;
+
+      * {
+        font-size: 1.5rem !important;
+      }
+    }
+
+    .hds-page-header__subtitle {
+      font-size: 1rem !important;
+    }
+
+    .hds-page-header__description {
+      font-size: 0.9rem !important;
+    }
+  }
+
+  .portfolio-card-container {
+    height: 28.75rem;
   }
 }

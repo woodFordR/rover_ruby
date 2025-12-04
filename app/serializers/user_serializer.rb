@@ -7,7 +7,7 @@ class UserSerializer < ApplicationSerializer
   end
   attribute :attributes do |obj|
     {
-      "resumePath": obj.resume_blob.url,
+      "resumePath": obj.resume.attached? ? obj.resume.url : nil,
       "firstName": obj.first_name,
       "lastName": obj.last_name,
       "username": obj.username,
