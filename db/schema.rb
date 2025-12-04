@@ -61,7 +61,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_09_07_203845) do
     t.text "code_description"
     t.string "code_link"
     t.string "avatar_path"
-    t.string "deploy_link"
     t.text "code_snippet"
     t.string "code_language"
     t.bigint "user_id", null: false

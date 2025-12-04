@@ -20,25 +20,15 @@
             <Hds::Text::Display @tag="h3" @size="400">
               {{@title}}
             </Hds::Text::Display>
-            {{#if @deployLink }}
               <LG.Item>
-                <a href={{@deployLink}}>
+                <a href={{@codeLink}}>
                   <Hds::Badge
-                    @text="Deployed Application"
+                    @text="Application Development"
                     @color="success"
                     @icon="check-circle"
                   />
                 </a>
               </LG.Item>
-            {{else}}
-              <LG.Item>
-                <Hds::Badge
-                  @text="Still In Development"
-                  @color="warning"
-                  @icon="change-circle"
-                />
-              </LG.Item>
-            {{/if}}
             <Hds::Text::Body @tag="p" @size="300">
               {{@description}}
             </Hds::Text::Body>

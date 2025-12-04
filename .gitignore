@@ -51,3 +51,5 @@ archived_photos/
 archived_photos/*
 
 /config/credentials/production.key
+
+/config/credentials/development.key
